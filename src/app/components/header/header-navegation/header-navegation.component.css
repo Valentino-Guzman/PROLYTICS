@@ -1,0 +1,21 @@
+.navegacion {
+    display: flex;
+    align-items: center;
+    width: 450px;
+    margin-left: 50px;
+}
+
+.navegacion-links {
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+
+.navegacion-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}

@@ -1,0 +1,17 @@
+.profile img {
+    width: 64px;
+    height: 64px;
+    margin-top: -20px;
+    margin-left: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-info p {
+    font-weight: bold;
+    margin-left: 15px;
+    margin-right: 20px;
+}

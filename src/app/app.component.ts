@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderMainComponent } from "./components/header/header-main/header-main.component";
+import { ProfileBgMainComponent } from "./components/profile-background/profile-bg-main/profile-bg-main.component";
+import { SeparationComponent } from "./components/separation/separation.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderMainComponent, ProfileBgMainComponent, SeparationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

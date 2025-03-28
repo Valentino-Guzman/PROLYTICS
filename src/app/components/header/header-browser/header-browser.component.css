@@ -1,0 +1,33 @@
+.browser-search {
+    margin-left: 300px;
+}
+
+.browser-search input{
+    width: 275px;
+    height: 41px;
+    background: #2B2A29;
+    border-radius: 15px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #ffffff;
+    padding-left: 25px;
+}
+
+.browser-search img {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: 10px;
+}
+
+input::placeholder {
+    color: #ffffff;
+    font-size: 12px;
+    
+}
+
+input:focus {
+    outline: none;  
+    border: none;
+}
+  

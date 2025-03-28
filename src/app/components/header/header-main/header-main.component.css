@@ -1,0 +1,39 @@
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 132px;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.encabezado-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160px;
+    margin-top: -45px;
+}
+
+.cat {
+    width: 64px;
+    height: 64px;
+}
+
+.riot {
+    width: 59px;
+    height: 40px;
+}
+
+.separador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.separador-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 50px;
+}
