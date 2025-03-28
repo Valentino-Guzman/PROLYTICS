@@ -1,8 +1,11 @@
 .browser-search {
+    display: flex;
+    align-items: center;
+    position: relative;
     margin-left: 300px;
 }
 
-.browser-search input{
+.browser-search input {
     width: 275px;
     height: 41px;
     background: #2B2A29;
@@ -12,22 +15,21 @@
     font-weight: bold;
     color: #ffffff;
     padding-left: 25px;
+    padding-right: 40px;
+}
+
+.browser-search button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .browser-search img {
-    position: absolute;
-    margin-left: -40px;
-    margin-top: 10px;
+    width: 20px;
+    height: 20px;
 }
-
-input::placeholder {
-    color: #ffffff;
-    font-size: 12px;
-    
-}
-
-input:focus {
-    outline: none;  
-    border: none;
-}
-  

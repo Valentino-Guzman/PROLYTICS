@@ -1,0 +1,47 @@
+.contenedor-profile {
+    display: flex;
+    color: white;
+    background-color: #3B393E;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+h2 {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: normal;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 1px;
+}
+
+.info-profile {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.nickname {
+    display: flex;
+    align-items: center;
+}
+
+.icon-profile {
+    border-radius: 50px;
+}
+
+.icon-profile img{
+    width: 150px;
+    height: 150px;
+}

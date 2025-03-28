@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './header-navegation.component.css'
 })
 export class HeaderNavegationComponent {
-
+  
 }

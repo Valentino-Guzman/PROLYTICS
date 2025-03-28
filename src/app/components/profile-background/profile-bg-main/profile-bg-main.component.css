@@ -1,5 +1,7 @@
 .profile-bg-main {
+    display: flex;
     background-image: url('../../../../../public/svg/profile/hecarim-high.png');
+    background-color: rgba(0, 0, 0, 0.4); /* 0.4 es el nivel de opacidad */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

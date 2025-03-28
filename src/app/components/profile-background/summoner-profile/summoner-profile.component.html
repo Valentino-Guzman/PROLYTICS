@@ -1,1 +1,17 @@
-<p>summoner-profile works!</p>
+<div class="contenedor-profile">
+    <div class="icon-profile">
+        <img src="svg/profile/example-icon.png" alt="icon-profile">
+    </div>
+    <div class="info-profile">
+        <div 
+        class="nickname"
+        *ngIf="summoner"
+        >
+            <h1> {{ summoner.gameName }} </h1>
+            <h2>#{{ summoner.tagLine }}</h2>
+        </div>
+        <p> {{ server }} </p>
+        <p> Posición en la tabla: {{ position }} </p>
+        <app-button-update></app-button-update>
+    </div>
+</div>
