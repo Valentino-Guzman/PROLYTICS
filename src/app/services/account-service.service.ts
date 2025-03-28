@@ -11,10 +11,11 @@ export class AccountServiceService {
 
   gameName: string = '';
   hashtag: string = '';
-  
-  private api: string = `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${this.gameName}/${this.hashtag}?`;
 
-  constructor(private http:HttpClient) { }
+
+  constructor(
+    private http:HttpClient
+  ) { }
 
   getAccount(): Observable<Account> {
     const url = `https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${this.gameName}/${this.hashtag}?api_key=${environment.apiKey}`;
