@@ -6,6 +6,7 @@ import { SharedDataService } from '../../../services/shared-data.service';
 import { SummonerIconService } from '../../../services/summoner-icon.service';
 import { Summoner } from '../../../interfaces/summoner';
 import { PuuidService } from '../../../services/puuid.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-browser',
@@ -23,7 +24,8 @@ export class HeaderBrowserComponent {
   constructor(
     private accountService: AccountServiceService,
     private sharedData: SharedDataService,
-    private puuidService: PuuidService
+    private puuidService: PuuidService,
+    private router: Router
   ) {}
 
   browseAccount() {
@@ -49,10 +51,9 @@ export class HeaderBrowserComponent {
         }
       );
     });
-    
+    this.router.navigate(['/profile'])
     this.name = '';
   }
-
 }
   
 
