@@ -1,1 +1,18 @@
-<p>elo-profile works!</p>
+<div class="rank-container">
+    <div class="elo-header">
+        <div class="elo-icon">
+            <img [src]="getEloIcon()" alt="elo-rank">
+        </div>
+        <div *ngIf="eloPlayer" class="elo-info" [ngClass]="getColorElo()">
+            <h1>{{eloPlayer.tier}} {{eloPlayer.rank}}</h1>
+            <span>{{eloPlayer.leaguePoints}} LP</span>
+            <p>{{rankType}}</p>
+        </div>
+    </div>
+    <div class="elo-stats">
+        <p>Victorias: {{eloPlayer?.wins}} </p>
+        <img src="svg/profile/separation.svg" alt="">
+        <span>Derrotas: {{eloPlayer?.losses}}</span>
+        <p class="winrate">(wr: {{winRate}}%)</p>
+    </div>    
+</div>

@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './champions.component.css'
 })
 export class ChampionsComponent {
+champion: any;
 
 }

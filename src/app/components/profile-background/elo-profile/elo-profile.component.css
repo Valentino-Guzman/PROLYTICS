@@ -1,0 +1,97 @@
+.rank-container {
+    width: 320px;
+    height: 360px;
+    background: #3B393E;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.master {
+    color: #BD9AF8;
+}
+
+.diamond {
+    color: #7989ec;
+}
+
+.emerald {
+    color:  #4AC97E;
+}
+
+.color-default {
+    color: #FFFFFF;
+}
+
+.elo-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elo-stats p {
+    color: #6DBE45;
+    font-weight: normal;
+    margin: 0;
+}
+
+.elo-stats span {
+    color: #BE3D3D;
+}
+
+.elo-stats img {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.elo-info {
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    justify-content: center;
+    margin-left: 20px;  
+}
+
+.elo-info p {
+    color: #FFFFFF;
+    font-weight: lighter;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.elo-info span {
+    font-weight: bold;
+    margin: 0;
+    font-size: 22px;
+}
+
+.elo-info h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.elo-icon {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.elo-icon img {
+    width: 150px;
+    height: 150px;
+}
+
+.elo-header {
+    display: flex;
+    padding-top: 5px;
+}
+
+.elo-stats .winrate {
+    color: #FFFFFF;
+    font-weight: lighter;
+    margin-left: 5px;
+    font-size: 14px;
+}
