@@ -1,1 +1,28 @@
-<p>historial-player works!</p>
+<div class="historial-container" *ngFor="let playerInfo of player">
+    <div 
+        class="historial-card-left" 
+        [ngClass]="{ 'historial-container-win': playerInfo.win, 'historial-container-loss': !playerInfo.win }"
+    >
+        <div 
+            class="border-card"
+            [ngClass]="{ 'border-card-win': playerInfo.win, 'border-card-loss': !playerInfo.win }"
+        ></div>
+
+        <div 
+            class="info-card"
+            [ngClass]="{ 'info-card-win': playerInfo.win, 'info-card-loss': !playerInfo.win }"
+        >
+            <div>
+                <span>{{ gameType }}</span>
+            </div>
+            <div class="info-bottom">
+                <p>{{ playerInfo.win ? 'Victoria' : 'Derrota' }}</p>
+                <span>{{ convertGameDuration(playerInfo.gameDuration) }}</span> 
+            </div>
+        </div>    
+    </div>
+    <div class="historial-center">
+        <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + playerInfo.championName + '.png'"  alt="hecarim">
+        <span class="player-kda">{{playerInfo.kills}} / {{playerInfo.deaths}} / {{playerInfo.assists}}  </span>
+    </div>
+</div>

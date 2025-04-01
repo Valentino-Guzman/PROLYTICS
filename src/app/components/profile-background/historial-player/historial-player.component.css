@@ -1,0 +1,96 @@
+.historial-container {
+    width: 500px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.historial-card-left {
+    width: 150px;
+    display: flex;
+}
+
+.historial-container-win {
+    background: rgba(52, 103, 27, 0.5);
+}
+
+.historial-container-loss {
+    background-color: rgba(103, 27, 27, 0.46);
+}
+
+.historial-container-win, .historial-container-loss {
+    height: 110px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.border-card {
+    width: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 110px;
+    position: absolute;
+}
+
+.info-card p{
+   margin: 0   
+}
+
+.border-card-win {
+    background-color: rgba(109, 190, 69, 0.62);
+}
+
+.border-card-loss {
+    background-color: rgba(190, 69, 69, 0.62);
+}
+
+.info-card {
+    width: 100px;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-card-loss p {
+    color: #DE3131;
+}
+
+.info-card-win p {
+    color: #31DE45;
+}
+
+.info-card span {
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: 300
+}
+
+.player-kda  {
+    color: #FFFFFF;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.historial-center {
+    position: absolute;
+}
+
+.historial-center img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50px;
+}
+
+.info-bottom {
+    margin-bottom: 5px;
+}

@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiKey: 'RGAPI-dd00e6b4-c031-45a3-ab54-b21f169aed2e',
+    apiKey: 'RGAPI-f7ad8354-1a3f-4008-9897-d92c8d0c8661',
 };

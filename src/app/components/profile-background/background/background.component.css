@@ -3,11 +3,17 @@
     margin: 25px;
     width: 100%;
     border-radius: 10px;
+    width: 100%;
 }
 
 .profile-info {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+.mid-screen {
+    display: flex;
 }
 
 

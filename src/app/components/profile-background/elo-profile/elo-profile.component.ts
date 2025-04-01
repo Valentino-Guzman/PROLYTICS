@@ -20,18 +20,20 @@ export class EloProfileComponent implements OnInit {
   rankType: string = '';
   eloIcon: string = '';
   colorElo: {[key: string]: string} = {
+    'UNRANKED': 'unranked',
     'IRON': 'hierro',
     'BRONZE': 'bronce',
     'SILVER': 'plata',
     'GOLD': 'oro',
     'PLATINUM': 'platino',
-    'EMERALD': 'emeralda',
-    'DIAMOND': 'diamonte',
+    'EMERALD': 'emerald',
+    'DIAMOND': 'diamond',
     'MASTER': 'master',
     'GRANDMASTER': 'grandmaster',
     'CHALLENGER': 'challenger'
   }
   eloIconImg: {[key: string]: string} = {
+    'UNRANKED': '',
     'IRON': 'webp/profile/iron.png',
     'BRONZE': 'webp/profile/bronze.png',
     'SILVER': 'webp/profile/silver.png',

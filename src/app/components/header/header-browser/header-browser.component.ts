@@ -3,10 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { AccountServiceService } from '../../../services/account-service.service';
 import { Account } from '../../../interfaces/account';
 import { SharedDataService } from '../../../services/shared-data.service';
-import { SummonerIconService } from '../../../services/summoner-icon.service';
 import { Summoner } from '../../../interfaces/summoner';
 import { PuuidService } from '../../../services/puuid.service';
 import { Router } from '@angular/router';
+import { ChampionsProfileService } from '../../../services/matches-profile.service';
 
 @Component({
   selector: 'app-header-browser',
@@ -25,6 +25,7 @@ export class HeaderBrowserComponent {
     private accountService: AccountServiceService,
     private sharedData: SharedDataService,
     private puuidService: PuuidService,
+    private championsProfile: ChampionsProfileService,
     private router: Router
   ) {}
 
@@ -40,16 +41,16 @@ export class HeaderBrowserComponent {
     this.accountService.getAccount().subscribe((data: Account) => {
       this.sharedData.setAccountData(data);
       console.log(data);
-      
-      this.puuidService.getPuuid().subscribe(
-        (summoner: Summoner) => {
+
+      this.puuidService.getPuuid().subscribe((summoner: Summoner) => {
           this.puuid = summoner.puuid;
           console.log(this.puuid);
         },
-        (error) => {
-          console.error('Error al obtener el puuid:', error);
-        }
       );
+
+      this.championsProfile.getMatchesProfile().subscribe((data:[]) => {
+        this.sharedData.setMatches(data);
+      });
     });
     this.router.navigate(['/profile'])
     this.name = '';

@@ -11,8 +11,7 @@ export class AccountServiceService {
 
   gameName: string = '';
   hashtag: string = '';
-
-
+  
   constructor(
     private http:HttpClient
   ) { }
