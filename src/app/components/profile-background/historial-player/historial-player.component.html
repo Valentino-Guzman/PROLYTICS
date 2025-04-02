@@ -12,8 +12,9 @@
             class="info-card"
             [ngClass]="{ 'info-card-win': playerInfo.win, 'info-card-loss': !playerInfo.win }"
         >
-            <div>
+            <div class="game-type">
                 <span>{{ gameType }}</span>
+                <img src="webp/profile/separation.png" alt="">
             </div>
             <div class="info-bottom">
                 <p>{{ playerInfo.win ? 'Victoria' : 'Derrota' }}</p>
@@ -22,7 +23,25 @@
         </div>    
     </div>
     <div class="historial-center">
-        <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + playerInfo.championName + '.png'"  alt="hecarim">
-        <span class="player-kda">{{playerInfo.kills}} / {{playerInfo.deaths}} / {{playerInfo.assists}}  </span>
+        <img class="champion-img" 
+             [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + playerInfo.championName + '.png'" 
+             alt="hecarim">
+        <div class="player-stats">
+            <div class="items-container">
+                <div 
+                    class="item-box" *ngFor="let item of playerInfo.items"
+                    [ngClass]="{ 'item-box-win': playerInfo.win, 'item-box-loss': !playerInfo.win }"
+                    
+                    >
+                    <img *ngIf="item && item !== '0'" class="item-img" 
+                         [src]="'https://ddragon.leagueoflegends.com/cdn/15.7.1/img/item/' + item + '.png'" 
+                         alt="item">
+                </div>
+            </div>
+            <div class="player-kda-container">
+                <span class="player-kda">{{ playerInfo.kills }} / {{ playerInfo.deaths }} / {{ playerInfo.assists }}</span>
+            </div>
+        </div>
     </div>
+    
 </div>

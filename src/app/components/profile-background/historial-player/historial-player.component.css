@@ -10,11 +10,6 @@
     justify-content: center;
 }
 
-.historial-card-left {
-    width: 150px;
-    display: flex;
-}
-
 .historial-container-win {
     background: rgba(52, 103, 27, 0.5);
 }
@@ -82,7 +77,10 @@
 }
 
 .historial-center {
+    display: flex;
     position: absolute;
+    align-items: center;
+    margin-left: 100px; 
 }
 
 .historial-center img {
@@ -91,6 +89,74 @@
     border-radius: 50px;
 }
 
+.player-kda-container {
+    display: flex;
+    align-items: center;   
+}
+
+.champion-img {
+    clip-path: circle(45% at center);
+}
+
+.items-container img{
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+.stats-player-win img {
+    background-color: #579738;
+}
+
+.stats-player-loss img {
+    background-color: #973838;
+}
+
+.stats-player {
+    display: flex;
+}
+
+.items-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.item-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-box-win {
+    background-color:#579738;
+}
+
+.item-box-loss {
+    background-color:#973838;
+}
+
+.player-kda-container {
+    display: flex;
+    align-items: center;   
+}
+
+.player-stats {
+    margin-left: 10px;
+}
+
+.historial-card-left {
+    display: flex;
+}
+
 .info-bottom {
     margin-bottom: 5px;
+}
+
+.game-type img {
+    margin-bottom: 4px;
 }

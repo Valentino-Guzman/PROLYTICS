@@ -9,9 +9,19 @@ export interface Participant {
     championName: string;
     win: string;
     gameDuration: number;
+    item0?: number;
+    item1?: number;
+    item2?: number;
+    item3?: number;
+    item4?: number;
+    item5?: number;
+    item6?: number;
+    items?: string[];
 }
   
-  
+
+
+
 export interface Info {
     participants: Participant[];
     gameMode: string;

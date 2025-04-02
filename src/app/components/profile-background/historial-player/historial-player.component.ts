@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Participant } from '../../../interfaces/player-stats';
 import { MatchService } from '../../../services/match.service';
 import { SharedDataService } from '../../../services/shared-data.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-historial-player',
-  imports: [CommonModule],
+  imports: [CommonModule, NgIf],
   templateUrl: './historial-player.component.html',
   styleUrl: './historial-player.component.css'
 })
@@ -27,6 +27,8 @@ export class HistorialPlayerComponent implements OnInit {
   queueId: number = 0;
   gameType: string = '';
   gameDuration: number = 0;
+
+  items: string[] = [];
 
   private queueTypes: { [key: number]: string } = {
     420: 'Clasificatoria Solo/dúo',
@@ -49,9 +51,9 @@ export class HistorialPlayerComponent implements OnInit {
     });
   
     this.matchService.getMatchId().subscribe(data => {
-      console.log(data);
       this.player = [];
       this.championNames = [];
+      this.items = [];
 
       data.forEach((match) => {
         match.info.participants.forEach((participant) => {
@@ -59,7 +61,6 @@ export class HistorialPlayerComponent implements OnInit {
             this.gameMode = match.info.gameMode;
             this.queueId = match.info.queueId;
             this.gameType = this.getGameType(this.queueId);
-  
             this.player.push({
               assists: participant.assists,
               deaths: participant.deaths,
@@ -70,17 +71,27 @@ export class HistorialPlayerComponent implements OnInit {
               championId: participant.championId,
               championName: participant.championName,
               win: participant.win,
-              gameDuration: match.info.gameDuration
+              gameDuration: match.info.gameDuration,
+              items: [
+                participant.item0,
+                participant.item1,
+                participant.item2,
+                participant.item3,
+                participant.item4,
+                participant.item5,
+                participant.item6
+              ].map(item => String(item))
             });
-  
+            console.log(participant)
             this.championNames.push(participant.championName);
+            
           }
         });
+        console.log(this.items)
       });
     });
   }
   
-
   getGameType(queueId: number): string {
     return this.queueTypes[queueId] || 'Modo Desconocido';
   }
