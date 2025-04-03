@@ -7,17 +7,46 @@
     margin-left: 10px;
 }
 
-.master {
-    color: #BD9AF8;
+.iron {
+    color: #948a7e;
+}
+
+.bronze {
+    color: rgb(187 166 113);
+}
+
+.silver {
+    color: #6a79ab;
+}
+
+.gold {
+    color: #ba8d26;
+}
+
+.platinum {
+    color: #5caba0;
+}
+
+.emerald {
+    color:  #4AC97E;
 }
 
 .diamond {
     color: #7989ec;
 }
 
-.emerald {
-    color:  #4AC97E;
+.master {
+    color: #BD9AF8;
 }
+
+.grandmaster {
+    color: #c23449;
+}
+
+.challenger {
+    color: #dbaf47;
+}
+
 
 .color-default {
     color: #FFFFFF;
@@ -33,10 +62,12 @@
     color: #6DBE45;
     font-weight: normal;
     margin: 0;
+    font-size: 15px;
 }
 
 .elo-stats span {
     color: #BE3D3D;
+    font-size: 15px;
 }
 
 .elo-stats img {
@@ -47,7 +78,7 @@
 .elo-info {
     display: flex;
     flex-direction: column;
-    height: 160px;
+    height: 135px;
     justify-content: center;
     margin-left: 15px;  
 }
@@ -57,7 +88,7 @@
     font-weight: lighter;
     margin-top: 5px;
     margin-bottom: 0;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .elo-info span {
@@ -68,7 +99,7 @@
 
 .elo-info h1 {
     margin: 0;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .elo-icon {
@@ -80,8 +111,8 @@
 }
 
 .elo-icon img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
 }
 
 .elo-header {
@@ -95,4 +126,10 @@
     font-weight: lighter;
     margin-left: 5px;
     font-size: 14px;
+}
+
+.separation {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
 }

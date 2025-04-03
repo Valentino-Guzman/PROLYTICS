@@ -21,7 +21,7 @@ export class ChampionsProfileService {
     return this.sharedData.accountData$.pipe(
       switchMap((data:Account) => {
         this.puuid = data.puuid;
-        const url = `https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${this.puuid}/ids?start=0&count=3&api_key=${environment.apiKey}`
+        const url = `https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/${this.puuid}/ids?start=0&count=2&api_key=${environment.apiKey}`
         console.log(url)
         return this.http.get<[]>(url);
       })

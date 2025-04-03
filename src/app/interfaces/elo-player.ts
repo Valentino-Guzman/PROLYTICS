@@ -5,4 +5,5 @@ export interface EloPlayer {
     leaguePoints: number;
     wins: number;
     losses: number;
+    winrate: number;
 }

@@ -5,76 +5,44 @@ import { CommonModule, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-elo-profile',
-  imports: [NgIf, CommonModule],
+  imports: [CommonModule],
   templateUrl: './elo-profile.component.html',
   styleUrl: './elo-profile.component.css'
 })
 export class EloProfileComponent implements OnInit {
+  eloPlayers: EloPlayer[] = [];
+  colorElo: Record<string, string> = {
+    'UNRANKED': 'unranked', 'IRON': 'iron', 'BRONZE': 'bronze', 'SILVER': 'silver',
+    'GOLD': 'gold', 'PLATINUM': 'platinum', 'EMERALD': 'emerald', 'DIAMOND': 'diamond',
+    'MASTER': 'master', 'GRANDMASTER': 'grandmaster', 'CHALLENGER': 'challenger'
+  };
+  eloIconImg: Record<string, string> = {
+    'UNRANKED': '', 'IRON': 'webp/profile/iron.png', 'BRONZE': 'webp/profile/bronze.png',
+    'SILVER': 'webp/profile/silver.png', 'GOLD': 'webp/profile/gold.png',
+    'PLATINUM': 'webp/profile/platinum.png', 'EMERALD': 'webp/profile/emerald.png',
+    'DIAMOND': 'webp/profile/diamond.png', 'MASTER': 'webp/profile/master.png',
+    'GRANDMASTER': 'webp/profile/grandmaster.png', 'CHALLENGER': 'webp/profile/challenger.png'
+  };
 
-  wins: number = 0;
-  losses: number = 0;
-  winRate: number = 0;
-
-  eloPlayer: EloPlayer | null = null;
-  color: string = '';
-  rankType: string = '';
-  eloIcon: string = '';
-  colorElo: {[key: string]: string} = {
-    'UNRANKED': 'unranked',
-    'IRON': 'hierro',
-    'BRONZE': 'bronce',
-    'SILVER': 'plata',
-    'GOLD': 'oro',
-    'PLATINUM': 'platino',
-    'EMERALD': 'emerald',
-    'DIAMOND': 'diamond',
-    'MASTER': 'master',
-    'GRANDMASTER': 'grandmaster',
-    'CHALLENGER': 'challenger'
-  }
-  eloIconImg: {[key: string]: string} = {
-    'UNRANKED': '',
-    'IRON': 'webp/profile/iron.png',
-    'BRONZE': 'webp/profile/bronze.png',
-    'SILVER': 'webp/profile/silver.png',
-    'GOLD': 'webp/profile/gold.png',
-    'PLATINUM': 'webp/profile/platinum.png',
-    'EMERALD': 'webp/profile/emerald.png',
-    'DIAMOND': 'webp/profile/diamond.png',
-    'MASTER': 'webp/profile/master.png',
-    'GRANDMASTER': 'webp/profile/grandmaster.png',
-    'CHALLENGER': 'webp/profile/challenger.png'
-  }
-
-  constructor(
-    private eloPlayerService: EloPlayerService,
-  ) {}
+  constructor(private eloPlayerService: EloPlayerService) {}
 
   ngOnInit() {
-    this.eloPlayerService.getEloPlayer().subscribe(
-      (data:EloPlayer[]) => {
-        this.eloPlayer = data[0];
-        this.color = this.eloPlayer.tier;
-        this.rankType = this.eloPlayer.queueType;
-        this.eloIcon = this.eloPlayer.tier;
-        this.wins = this.eloPlayer.wins;
-        this.losses = this.eloPlayer.losses;
-        this.winRate = Math.round((this.wins / (this.wins + this.losses)) * 100);
-        this.replaceText();
-        console.log(this.eloPlayer);
-    })
-    this.getEloIcon();
+    this.eloPlayerService.getEloPlayer().subscribe(data => {
+      this.eloPlayers = data.map(player => ({
+        ...player,
+        queueType: player.queueType
+          .replace("RANKED_SOLO_5x5", "Clasificatoria solo/dúo")
+          .replace("RANKED_FLEX_SR", "Clasificatoria flexible"),
+        winrate: Math.round((player.wins / (player.wins + player.losses)) * 100)
+      })).sort((a, b) => a.queueType === "Clasificatoria solo/dúo" ? -1 : 1);
+    });
   }
 
-  getColorElo() {
-    return this.colorElo[this.color] || 'color-default';
+  getColorElo(tier: string): string {
+    return this.colorElo[tier] || 'color-default';
   }
 
-  replaceText() {
-    this.rankType = this.rankType.replace("RANKED_SOLO_5x5", "Clasificatoria solo/dúo");
-  }
-
-  getEloIcon() {
-    return this.eloIconImg[this.eloIcon]
+  getEloIcon(tier: string): string {
+    return this.eloIconImg[tier] || '';
   }
 }

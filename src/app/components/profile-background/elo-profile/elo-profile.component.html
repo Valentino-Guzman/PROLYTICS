@@ -1,18 +1,23 @@
 <div class="rank-container">
-    <div class="elo-header">
-        <div class="elo-icon">
-            <img [src]="getEloIcon()" alt="elo-rank">
+    <div *ngFor="let player of eloPlayers">
+        <div class="elo-header">
+            <div class="elo-icon">
+                <img [src]="getEloIcon(player.tier)" alt="elo-rank">
+            </div>
+            <div class="elo-info" [ngClass]="getColorElo(player.tier)">
+                <h1>{{player.tier}} {{player.rank}}</h1>
+                <span>{{player.leaguePoints}} LP</span>
+                <p>{{player.queueType}}</p>
+            </div>
         </div>
-        <div *ngIf="eloPlayer" class="elo-info" [ngClass]="getColorElo()">
-            <h1>{{eloPlayer.tier}} {{eloPlayer.rank}}</h1>
-            <span>{{eloPlayer.leaguePoints}} LP</span>
-            <p>{{rankType}}</p>
+        <div class="elo-stats">
+            <p>Victorias: {{player.wins}}</p>
+            <img src="svg/profile/separation.svg" alt="">
+            <span>Derrotas: {{player.losses}}</span>
+            <p class="winrate">(wr: {{player.winrate}}%)</p>
+        </div>
+        <div class="separation">
+            <img src="webp/profile/separation2.png" alt="">  
         </div>
     </div>
-    <div class="elo-stats">
-        <p>Victorias: {{eloPlayer?.wins}} </p>
-        <img src="svg/profile/separation.svg" alt="">
-        <span>Derrotas: {{eloPlayer?.losses}}</span>
-        <p class="winrate">(wr: {{winRate}}%)</p>
-    </div>    
 </div>

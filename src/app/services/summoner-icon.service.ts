@@ -23,7 +23,7 @@ export class SummonerIconService {
     return this.puuidService.getPuuid().pipe(
       switchMap((data: Summoner) => {
         this.idIcon = data.profileIconId;
-        const url  = `https://ddragon.leagueoflegends.com/cdn/15.6.1/img/profileicon/${this.idIcon}.png`
+        const url  = `https://ddragon.leagueoflegends.com/cdn/15.7.1/img/profileicon/${this.idIcon}.png`
         console.log(url)
         return this.http.get(url, { responseType: 'blob' }).pipe(
           map((blob) => URL.createObjectURL(blob))

@@ -151,6 +151,7 @@
 
 .historial-card-left {
     display: flex;
+    margin-bottom: 0px;
 }
 
 .info-bottom {
@@ -160,3 +161,10 @@
 .game-type img {
     margin-bottom: 4px;
 }
+
+.time p {
+    color: #FFFFFF;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+

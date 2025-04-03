@@ -17,6 +17,7 @@ export interface Participant {
     item5?: number;
     item6?: number;
     items?: string[];
+    gameDateFin?: string;
 }
   
 
@@ -27,6 +28,7 @@ export interface Info {
     gameMode: string;
     queueId: number;
     gameDuration: number;
+    gameEndTimestamp: number;
 }
 
 export interface ListMatches {
@@ -35,4 +37,5 @@ export interface ListMatches {
 
 export interface DataMatch {
     info: Info;
+
 }

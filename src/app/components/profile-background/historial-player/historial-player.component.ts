@@ -27,7 +27,8 @@ export class HistorialPlayerComponent implements OnInit {
   queueId: number = 0;
   gameType: string = '';
   gameDuration: number = 0;
-
+  gameDate: number = 0;
+  gameDateFin: string = '';
   items: string[] = [];
 
   private queueTypes: { [key: number]: string } = {
@@ -60,7 +61,13 @@ export class HistorialPlayerComponent implements OnInit {
           if (participant.puuid === this.playerPuuid) {
             this.gameMode = match.info.gameMode;
             this.queueId = match.info.queueId;
+            this.gameDate = match.info.gameEndTimestamp;
             this.gameType = this.getGameType(this.queueId);
+            const gameDate = new Date(match.info.gameEndTimestamp);
+            const formattedDate = gameDate.toLocaleDateString("es-ES", {
+              day: "2-digit",
+              month: "short"
+          }).replace(".", "");
             this.player.push({
               assists: participant.assists,
               deaths: participant.deaths,
@@ -80,17 +87,19 @@ export class HistorialPlayerComponent implements OnInit {
                 participant.item4,
                 participant.item5,
                 participant.item6
-              ].map(item => String(item))
+              ].map(item => String(item)),
+              gameDateFin: formattedDate 
             });
-            console.log(participant)
-            this.championNames.push(participant.championName);
-            
+            console.log(participant);
+            this.championNames.push(participant.championName);    
           }
         });
-        console.log(this.items)
+
+        console.log('info de partida:',match.info.gameEndTimestamp)
       });
     });
   }
+  
   
   getGameType(queueId: number): string {
     return this.queueTypes[queueId] || 'Modo Desconocido';
@@ -105,5 +114,10 @@ export class HistorialPlayerComponent implements OnInit {
   getAllCs(minionsJg: number, minions: number): number {
     const allCs = Math.floor(minionsJg + minions);
     return allCs;
+  }
+
+  isSameDate(currentDate: string | undefined, index: number): boolean {
+    if (index === 0) return false;
+    return this.player[index - 1]?.gameDateFin === currentDate;
   }
 }
