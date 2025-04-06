@@ -8,6 +8,10 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [],
-  imports: [CommonModule, RouterModule.forChild(routes)]
+  imports: [
+    CommonModule, 
+    RouterModule.forChild(routes),
+    ProfileBgMainComponent
+  ],
 })
 export class ProfileModule {}

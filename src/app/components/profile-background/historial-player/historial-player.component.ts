@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Participant } from '../../../interfaces/player-stats';
 import { MatchService } from '../../../services/match.service';
 import { SharedDataService } from '../../../services/shared-data.service';
 import { CommonModule, NgIf } from '@angular/common';
+import { ChampionsProfileService } from '../../../services/matches-profile.service';
 
 @Component({
   selector: 'app-historial-player',
@@ -31,9 +32,11 @@ export class HistorialPlayerComponent implements OnInit {
   gameDateFin: string = '';
   items: string[] = [];
 
+  @Input() userId: string = '';
+
   private queueTypes: { [key: number]: string } = {
     420: 'Clasificatoria Solo/dúo',
-    440: 'Ranked Flex',
+    440: 'Clasificatoria Flexible',
     700: 'Clash',
     400: 'Normal Draft',
     430: 'Normal Blind',
@@ -44,18 +47,24 @@ export class HistorialPlayerComponent implements OnInit {
   constructor(
     private matchService: MatchService,
     private sharedData: SharedDataService,
+    private championsProfile: ChampionsProfileService,
   ) {}
-
+  
   ngOnInit() {
+    this.getPlayerInfo();
+  }
+  
+  getPlayerInfo() {
     this.sharedData.accountData$.subscribe(data => {
       this.playerPuuid = data.puuid;
     });
-  
+
+
     this.matchService.getMatchId().subscribe(data => {
       this.player = [];
       this.championNames = [];
       this.items = [];
-
+      
       data.forEach((match) => {
         match.info.participants.forEach((participant) => {
           if (participant.puuid === this.playerPuuid) {
@@ -67,7 +76,7 @@ export class HistorialPlayerComponent implements OnInit {
             const formattedDate = gameDate.toLocaleDateString("es-ES", {
               day: "2-digit",
               month: "short"
-          }).replace(".", "");
+            }).replace(".", "");
             this.player.push({
               assists: participant.assists,
               deaths: participant.deaths,
@@ -90,16 +99,13 @@ export class HistorialPlayerComponent implements OnInit {
               ].map(item => String(item)),
               gameDateFin: formattedDate 
             });
-            console.log(participant);
-            this.championNames.push(participant.championName);    
+            this.championNames.push(participant.championName);
           }
         });
-
         console.log('info de partida:',match.info.gameEndTimestamp)
       });
     });
   }
-  
   
   getGameType(queueId: number): string {
     return this.queueTypes[queueId] || 'Modo Desconocido';
@@ -120,4 +126,5 @@ export class HistorialPlayerComponent implements OnInit {
     if (index === 0) return false;
     return this.player[index - 1]?.gameDateFin === currentDate;
   }
+
 }

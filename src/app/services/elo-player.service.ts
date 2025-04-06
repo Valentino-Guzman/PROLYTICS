@@ -24,7 +24,6 @@ export class EloPlayerService {
       switchMap((data: Account) => {
         this.puuid = data.puuid;
         const url = `https://la2.api.riotgames.com/lol/league/v4/entries/by-puuid/${this.puuid}?api_key=${environment.apiKey}`;
-        console.log(url);
         return this.http.get<EloPlayer[]>(url, {});
       })
     )

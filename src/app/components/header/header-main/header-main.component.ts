@@ -10,5 +10,5 @@ import { HeaderProfileComponent } from "../header-profile/header-profile.compone
   styleUrl: './header-main.component.css'
 })
 export class HeaderMainComponent {
-
+  
 }

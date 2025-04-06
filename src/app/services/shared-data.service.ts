@@ -12,7 +12,7 @@ export class SharedDataService {
     private accountData = new BehaviorSubject<Account>({} as Account);
     accountData$ = this.accountData.asObservable(); 
     
-    private matchesSource = new BehaviorSubject<[]>([]);
+    private matchesSource = new BehaviorSubject<string[]>([]);
     matches$ = this.matchesSource.asObservable();
 
     private championName = new BehaviorSubject<string[]>({} as string[]);
@@ -24,7 +24,8 @@ export class SharedDataService {
       this.accountData.next(data);
     }
 
-    setMatches(matches: []): void {
+    setMatches(matches: string[]): void {
+      console.log('Guardando matches:', matches); 
       this.matchesSource.next(matches);
     }
 

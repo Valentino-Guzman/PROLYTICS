@@ -8,5 +8,5 @@ import { BackgroundComponent } from "../background/background.component";
   styleUrl: './profile-bg-main.component.css'
 })
 export class ProfileBgMainComponent {
-
+  
 }

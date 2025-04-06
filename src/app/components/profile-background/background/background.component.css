@@ -16,4 +16,9 @@
     display: flex;
 }
 
+.left-content {
+    display: flex;
+    flex-direction: column;;
+}
+
 

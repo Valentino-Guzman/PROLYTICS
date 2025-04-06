@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { forkJoin, Observable, switchMap } from 'rxjs';
 import { SharedDataService } from './shared-data.service';
 import { environment } from '../enviroments/api-key';
-import { DataMatch, ListMatches } from '../interfaces/player-stats';
+import { DataMatch } from '../interfaces/player-stats';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ import { DataMatch, ListMatches } from '../interfaces/player-stats';
 })
 export class MatchService {
 
-  matchId:ListMatches[] = [];
+  matchId: string[] = [];
 
   constructor(
     private http: HttpClient,
@@ -27,6 +27,6 @@ export class MatchService {
         );
         return forkJoin(requests);
       })
-    ) 
+    );
   }
 }

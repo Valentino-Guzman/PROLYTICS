@@ -31,10 +31,6 @@ export interface Info {
     gameEndTimestamp: number;
 }
 
-export interface ListMatches {
-    list:[];
-}
-
 export interface DataMatch {
     info: Info;
 
