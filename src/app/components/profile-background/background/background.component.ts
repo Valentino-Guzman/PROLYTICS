@@ -7,7 +7,7 @@ import { ChampionProfileComponent } from "../champion-profile/champion-profile.c
 
 @Component({
   selector: 'app-background',
-  imports: [SummonerProfileComponent, EloProfileComponent, HistorialPlayerComponent, ChampionProfileComponent, ChampionsComponent],
+  imports: [SummonerProfileComponent, EloProfileComponent, HistorialPlayerComponent, ChampionsComponent],
   templateUrl: './background.component.html',
   styleUrl: './background.component.css'
 })

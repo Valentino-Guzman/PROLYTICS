@@ -1,8 +1,100 @@
 .champions-container {
     width: 320px;
-    height: 360px;
     background: #3B393E;
     border-radius: 10px;
     margin-top: 10px;
     margin-left: 10px;
 }
+
+.champions-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.champions-header h1 {
+    color: #FFFFFF;
+    font-weight: lighter;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.champion-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #FFFFFF;
+    font-weight: lighter;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.champion-games {
+    width: 100px;
+}
+
+.champions-content {
+    padding: 1px;
+}
+
+.champion-kda {
+    display: flex;
+    width: 150px;
+    justify-content: center;
+}
+
+.champion-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 125px;
+}
+
+.champion-image {
+    display: flex;
+    width: 120px;
+    justify-content: center;
+}
+
+.champion-image img{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.champion-games {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+}
+
+.champion-games span{
+    color: #FFBB23;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.champion-games p{
+   margin: 0;
+}
+
+.champion-name p {
+   margin: 0;
+   margin-top: 1px;
+}
+
+.champion-name span {
+    margin-top: 1px;
+    font-size: 12px;
+}
+
+.champion-kda p {
+    font-size: 13px;
+}
+
+
+

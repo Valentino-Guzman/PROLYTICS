@@ -1,1 +1,23 @@
-<div>hola</div>
+<div class="champions-container">
+    <div class="champions-header">
+        <h1>(Estadisticas de las últimas 15 partidas)</h1>
+    </div>       
+    <div class="champions-content">
+        <div class="champion-list" *ngFor="let championData of championSummary">
+            <div class="champion-image">
+                <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + championData.champion.championName + '.png'" alt="">
+            </div>
+            <div class="champion-name">
+                <p>{{championData.champion.championName}}</p>
+                <span>{{championData.avgMinions | number:'1.0-0'}} CS</span>
+            </div>
+            <div class="champion-kda">
+                <p>{{championData.avgKills | number:'1.1-1'}} / {{championData.avgDeaths | number:'1.1-1'}} / {{championData.avgAssists | number:'1.1-1'}}</p>
+            </div>
+            <div class="champion-games">
+                <span>{{championData.winrate | number:'1.0-0' }}%</span>
+                <p>{{championData.count}} Juegos</p>
+            </div>
+        </div>
+    </div>
+</div>

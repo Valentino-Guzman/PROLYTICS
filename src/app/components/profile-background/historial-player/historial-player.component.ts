@@ -3,7 +3,6 @@ import { Participant } from '../../../interfaces/player-stats';
 import { MatchService } from '../../../services/match.service';
 import { SharedDataService } from '../../../services/shared-data.service';
 import { CommonModule, NgIf } from '@angular/common';
-import { ChampionsProfileService } from '../../../services/matches-profile.service';
 
 @Component({
   selector: 'app-historial-player',
@@ -46,8 +45,7 @@ export class HistorialPlayerComponent implements OnInit {
 
   constructor(
     private matchService: MatchService,
-    private sharedData: SharedDataService,
-    private championsProfile: ChampionsProfileService,
+    private sharedData: SharedDataService
   ) {}
   
   ngOnInit() {
@@ -58,7 +56,6 @@ export class HistorialPlayerComponent implements OnInit {
     this.sharedData.accountData$.subscribe(data => {
       this.playerPuuid = data.puuid;
     });
-
 
     this.matchService.getMatchId().subscribe(data => {
       this.player = [];
@@ -99,10 +96,9 @@ export class HistorialPlayerComponent implements OnInit {
               ].map(item => String(item)),
               gameDateFin: formattedDate 
             });
-            this.championNames.push(participant.championName);
+            this.sharedData.setChampionName(this.player);
           }
         });
-        console.log('info de partida:',match.info.gameEndTimestamp)
       });
     });
   }

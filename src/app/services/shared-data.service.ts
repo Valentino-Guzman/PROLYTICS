@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Account } from '../interfaces/account';
 import { EloPlayer } from '../interfaces/elo-player';
+import { Participant } from '../interfaces/player-stats';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class SharedDataService {
     private matchesSource = new BehaviorSubject<string[]>([]);
     matches$ = this.matchesSource.asObservable();
 
-    private championName = new BehaviorSubject<string[]>({} as string[]);
+    private championName = new BehaviorSubject<Participant[]>([]);
     championName$ = this.championName.asObservable();
 
     constructor() {}
@@ -24,12 +25,11 @@ export class SharedDataService {
       this.accountData.next(data);
     }
 
-    setMatches(matches: string[]): void {
-      console.log('Guardando matches:', matches); 
+    setMatches(matches: string[]): void { 
       this.matchesSource.next(matches);
     }
 
-    setChampionName(championNameId: string[]): void {
-      this.championName.next(championNameId);
+    setChampionName(championName: Participant[]): void {
+      this.championName.next(championName);
     }
 }

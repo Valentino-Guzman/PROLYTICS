@@ -2,7 +2,7 @@
     width: 500px;
     border-radius: 10px;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -164,7 +164,7 @@
 
 .time p {
     color: #FFFFFF;
-    margin-left: 15px;
-    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-bottom: 0px;
 }
 
