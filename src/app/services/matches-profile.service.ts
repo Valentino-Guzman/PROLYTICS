@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../enviroments/api-key';
+import { environment } from '../../enviroments/api-key';
 import { SharedDataService } from './shared-data.service';
 import { Account } from '../interfaces/account';
 import { concatMap, forkJoin, from, map, Observable, reduce, switchMap } from 'rxjs';

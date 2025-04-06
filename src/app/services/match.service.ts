@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { forkJoin, Observable, switchMap } from 'rxjs';
 import { SharedDataService } from './shared-data.service';
-import { environment } from '../enviroments/api-key';
+import { environment } from '../../enviroments/api-key';
 import { DataMatch } from '../interfaces/player-stats';
 
 

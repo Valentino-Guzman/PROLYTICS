@@ -31,10 +31,10 @@ export class EloProfileComponent implements OnInit {
       this.eloPlayers = data.map(player => ({
         ...player,
         queueType: player.queueType
-          .replace("RANKED_SOLO_5x5", "Clasificatoria solo/dúo")
-          .replace("RANKED_FLEX_SR", "Clasificatoria flexible"),
+        .replace("RANKED_SOLO_5x5", "Clasificatoria solo/dúo")
+        .replace("RANKED_FLEX_SR", "Clasificatoria flexible"),
         winrate: Math.round((player.wins / (player.wins + player.losses)) * 100)
-      })).sort((a, b) => a.queueType === "Clasificatoria solo/dúo" ? -1 : 1);
+      })).sort((a) => a.queueType === "Clasificatoria solo/dúo" ? -1 : 1);
     });
   }
 

@@ -4,7 +4,7 @@ import { map, Observable, switchMap } from 'rxjs';
 import { SharedDataService } from './shared-data.service';
 import { Summoner } from '../interfaces/summoner';
 import { Account } from '../interfaces/account';
-import { environment } from '../enviroments/api-key';
+import { environment } from '../../enviroments/api-key';
 import { PuuidService } from './puuid.service';
 
 @Injectable({

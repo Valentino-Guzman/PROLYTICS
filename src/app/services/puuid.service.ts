@@ -4,7 +4,7 @@ import { filter, Observable, switchMap } from 'rxjs';
 import { Account } from '../interfaces/account';
 import { SharedDataService } from './shared-data.service';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../enviroments/api-key';
+import { environment } from '../../enviroments/api-key';
 
 @Injectable({
   providedIn: 'root'
