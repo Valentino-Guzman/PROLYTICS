@@ -50,7 +50,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 125px;
+    width: 90px;
 }
 
 .champion-image {
@@ -60,9 +60,9 @@
 }
 
 .champion-image img{
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    clip-path: circle(45% at center);
 }
 
 .champion-games {
@@ -72,13 +72,13 @@
     font-size: 12px;
 }
 
-.champion-games span{
-    color: #FFBB23;
-    font-size: 16px;
+.champion-games span {
+    color: #ffc23b;
+    font-size: 13px;
     font-weight: 300;
 }
 
-.champion-games p{
+.champion-games p {
    margin: 0;
 }
 
@@ -92,9 +92,26 @@
     font-size: 12px;
 }
 
-.champion-kda p {
+.champion-kda p, .champion-kda span, .champion-kda h1 {
+    margin: 0;
+    margin-left: 2px;
+    margin-right: 2px;
     font-size: 13px;
+    font-weight: 400;
 }
+
+.champion-kda h1 {  
+    color: #6DBE45;
+}
+
+.champion-kda span {
+    color: #DE3131;
+}
+
+.champion-kda p {
+    color:#ffc23b;
+}
+
 
 
 

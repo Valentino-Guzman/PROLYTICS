@@ -1,0 +1,20 @@
+<div class="maestry-container">
+    <div class="maestry-header">
+        <h1>Maestria de campeones</h1>
+    </div>
+    <div class="maestry-content">
+        <div class="champion-card">
+            <div class="champion-list" *ngFor="let mastery of masteryChampions">
+                <div class="champion-image">
+                    <img [src]='`https://ddragon.leagueoflegends.com/cdn/15.7.1/img/champion/${getChampionId(mastery.championId)}.png`' alt="">
+                </div>
+                <div class="champion-info">
+                    <h1>{{getChampionId(mastery.championId)}}</h1>
+                    <p>{{mastery.championPoints | number:'1.0-0'}}</p>
+                    <span>puntos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,66 @@
+.maestry-container {
+    width: 320px;
+    background: #3B393E;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.maestry-header {
+    display: flex;
+    justify-content: center;
+}
+
+.maestry-header h1 {
+    color: #FFFFFF;
+    font-weight: lighter;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.champion-card {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.maestry-content {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.champion-image img {
+    clip-path: inset(6% 6% 4% 6%);
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+}
+
+.champion-list:hover {
+background-color: #2a282c;
+  color: white;
+}
+
+.champion-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.champion-info h1, .champion-info p, .champion-info span {
+    font-weight: 200;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.champion-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 15px;
+}

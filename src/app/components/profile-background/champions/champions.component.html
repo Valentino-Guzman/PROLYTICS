@@ -12,7 +12,9 @@
                 <span>{{championData.avgMinions | number:'1.0-0'}} CS</span>
             </div>
             <div class="champion-kda">
-                <p>{{championData.avgKills | number:'1.1-1'}} / {{championData.avgDeaths | number:'1.1-1'}} / {{championData.avgAssists | number:'1.1-1'}}</p>
+                <h1>{{ championData.avgKills | number:'1.1-1':'en-US' }} / </h1> 
+                <span>{{ championData.avgDeaths | number:'1.1-1':'en-US' }} / </span>    
+                <p>{{ championData.avgAssists | number:'1.1-1':'en-US' }}</p> 
             </div>
             <div class="champion-games">
                 <span>{{championData.winrate | number:'1.0-0' }}%</span>
