@@ -9,6 +9,8 @@ export interface Participant {
     championName: string;
     win: string;
     gameDuration: number;
+    riotIdGameName: string;
+    teamId: number;
     item0?: number;
     item1?: number;
     item2?: number;
@@ -20,9 +22,6 @@ export interface Participant {
     gameDateFin?: string;
 }
   
-
-
-
 export interface Info {
     participants: Participant[];
     gameMode: string;

@@ -30,6 +30,7 @@ export class HistorialPlayerComponent implements OnInit {
   gameDate: number = 0;
   gameDateFin: string = '';
   items: string[] = [];
+  playersByMatch: Participant[][] = [];
 
   @Input() userId: string = '';
 
@@ -56,34 +57,30 @@ export class HistorialPlayerComponent implements OnInit {
     this.sharedData.accountData$.subscribe(data => {
       this.playerPuuid = data.puuid;
     });
-
+  
     this.matchService.getMatchId().subscribe(data => {
       this.player = [];
       this.championNames = [];
       this.items = [];
-      
+      this.playersByMatch = [];
+  
       data.forEach((match) => {
+        let currentIndex = this.player.length;
+        console.log(match)
         match.info.participants.forEach((participant) => {
+          const formattedDate = new Date(match.info.gameEndTimestamp).toLocaleDateString("es-ES", {
+            day: "2-digit",
+            month: "short"
+          }).replace(".", "");
+  
           if (participant.puuid === this.playerPuuid) {
             this.gameMode = match.info.gameMode;
             this.queueId = match.info.queueId;
             this.gameDate = match.info.gameEndTimestamp;
             this.gameType = this.getGameType(this.queueId);
-            const gameDate = new Date(match.info.gameEndTimestamp);
-            const formattedDate = gameDate.toLocaleDateString("es-ES", {
-              day: "2-digit",
-              month: "short"
-            }).replace(".", "");
+  
             this.player.push({
-              assists: participant.assists,
-              deaths: participant.deaths,
-              kills: participant.kills,
-              neutralMinionsKilled: participant.neutralMinionsKilled,
-              totalMinionsKilled: participant.totalMinionsKilled,
-              puuid: participant.puuid,
-              championId: participant.championId,
-              championName: participant.championName,
-              win: participant.win,
+              ...participant,
               gameDuration: match.info.gameDuration,
               items: [
                 participant.item0,
@@ -94,14 +91,21 @@ export class HistorialPlayerComponent implements OnInit {
                 participant.item5,
                 participant.item6
               ].map(item => String(item)),
-              gameDateFin: formattedDate 
+              gameDateFin: formattedDate
             });
+  
             this.sharedData.setChampionName(this.player);
           }
+          if (!this.playersByMatch[currentIndex]) {
+            this.playersByMatch[currentIndex] = [];
+          }
+  
+          this.playersByMatch[currentIndex].push({ ...participant });
         });
       });
     });
   }
+  
   
   getGameType(queueId: number): string {
     return this.queueTypes[queueId] || 'Modo Desconocido';
@@ -121,6 +125,14 @@ export class HistorialPlayerComponent implements OnInit {
   isSameDate(currentDate: string | undefined, index: number): boolean {
     if (index === 0) return false;
     return this.player[index - 1]?.gameDateFin === currentDate;
+  }
+
+  getAllies(index: number, teamId: number): Participant[] {
+    return this.playersByMatch[index]?.filter(p => p.teamId === teamId) || [];
+  }
+  
+  getEnemies(index: number, teamId: number): Participant[] {
+    return this.playersByMatch[index]?.filter(p => p.teamId !== teamId) || [];
   }
 
 }

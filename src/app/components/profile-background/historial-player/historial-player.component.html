@@ -46,6 +46,28 @@
                     <span class="player-kda">{{ playerInfo.kills }} / {{ playerInfo.deaths }} / {{ playerInfo.assists }}</span>
                 </div>
             </div>
-        </div>  
+        </div> 
+        <div class="historial-card-right">
+            <div class="team-section">
+              <div *ngFor="let p of getAllies(i, playerInfo.teamId)" class="player-container">
+                <div class="champions-icon">
+                    <img [src]="`https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/` + p.championName + '.png'" alt="">
+                </div>
+                <div class="info-player">
+                    <p>{{p.riotIdGameName}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="team-section">
+                <div *ngFor="let p of getEnemies(i, playerInfo.teamId)" class="player-container">
+                  <div class="champions-icon">
+                      <img [src]="`https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/` + p.championName + '.png'" alt="">
+                  </div>
+                  <div class="info-player">
+                      <p>{{p.riotIdGameName}}</p>
+                  </div>
+                </div>
+              </div>
+          </div>
     </div>  
 </div>

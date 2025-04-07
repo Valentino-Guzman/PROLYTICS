@@ -1,5 +1,5 @@
 .historial-container {
-    width: 500px;
+    width: 800px;
     border-radius: 10px;
     margin-top: 10px;
     margin-left: 20px;
@@ -7,7 +7,6 @@
     flex-direction: row;
     position: relative;
     align-items: center;
-    justify-content: center;
 }
 
 .historial-container-win {
@@ -19,7 +18,7 @@
 }
 
 .historial-container-win, .historial-container-loss {
-    height: 110px;
+    height: 130px;
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -29,7 +28,7 @@
     width: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    height: 110px;
+    height: 130px;
     position: absolute;
 }
 
@@ -80,12 +79,12 @@
     display: flex;
     position: absolute;
     align-items: center;
-    margin-left: 100px; 
+    transform: translateX(50%);
 }
 
 .historial-center img {
-    width: 85px;
-    height: 85px;
+    width: 70px;
+    height: 70px;
     border-radius: 50px;
 }
 
@@ -99,8 +98,8 @@
 }
 
 .items-container img{
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 5px;
 }
 
@@ -124,8 +123,8 @@
 }
 
 .item-box {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -166,5 +165,38 @@
     color: #FFFFFF;
     margin-left: 20px;
     margin-bottom: 0px;
+}
+
+.historial-card-right {
+    width: 160px;
+    display: flex;
+    position: absolute;
+    right: 125px;
+    top: 50%;
+    transform: translateY(-48%);
+}
+
+.team-info {
+    display: flex;
+}
+
+.champions-icon img {
+    clip-path: inset(6% 6% 4% 6%);
+    border-radius: 10px;
+    width: 22px;
+}
+
+.player-container {
+    display: flex;
+    align-items: center;
+    width: 90px;
+}
+
+.info-player p {
+    margin: 0;
+    margin-left: 2px;
+    color: #d9d9d9; 
+    font-weight: 300;
+    font-size: 10px;
 }
 
