@@ -38,11 +38,6 @@
     border-radius: 15px;
 }
 
-.champion-list:hover {
-background-color: #2a282c;
-  color: white;
-}
-
 .champion-info {
     display: flex;
     flex-direction: column;
@@ -63,4 +58,11 @@ background-color: #2a282c;
     flex-direction: column;
     border-radius: 5px;
     padding: 15px;
+    transition: ease-in-out 0.2s;
+}
+
+
+.champion-list:hover {
+    background-color: #2a282c;
+    color: white;
 }

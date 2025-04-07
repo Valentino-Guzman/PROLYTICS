@@ -30,9 +30,12 @@
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 14px;
+    transition: ease-in-out 0.2s;
 }
 
 .champion-games {
+    position: relative;
+    display: inline-block;
     width: 100px;
 }
 
@@ -112,6 +115,7 @@
     color:#ffc23b;
 }
 
-
-
-
+.champion-list:hover {
+    background-color: #2a282c;
+    border-radius: 10px;
+}  
