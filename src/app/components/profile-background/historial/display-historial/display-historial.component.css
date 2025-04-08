@@ -1,0 +1,33 @@
+.border-card {
+    width: 35px;
+    height: 130px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+}
+
+.border-card svg {
+    color: #293828;
+    transition: transform 0.3s ease;
+}
+
+.border-card-win {
+    background-color: rgba(109, 190, 69, 0.60);
+}
+
+.border-card-loss {
+    background-color: rgba(190, 69, 69, 0.60);
+}
+
+.rotated {
+    transform: rotate(180deg);
+}

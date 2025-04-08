@@ -1,38 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Participant } from '../../../interfaces/player-stats';
-import { MatchService } from '../../../services/match.service';
-import { SharedDataService } from '../../../services/shared-data.service';
+import { Participant } from '../../../../interfaces/player-stats';
+import { MatchService } from '../../../../services/match.service';
+import { SharedDataService } from '../../../../services/shared-data.service';
 import { CommonModule, NgIf } from '@angular/common';
+import { HistorialPlayerItemComponent } from "../historial-player-item/historial-player-item.component";
 
 @Component({
   selector: 'app-historial-player',
-  imports: [CommonModule, NgIf],
+  imports: [CommonModule, HistorialPlayerItemComponent],
   templateUrl: './historial-player.component.html',
   styleUrl: './historial-player.component.css'
 })
 export class HistorialPlayerComponent implements OnInit {
 
-  playerPuuid: string = '';
+  @Input() userId: string = '';
+
   player: Participant[] = [];
-  assists: number = 0;
-  deaths: number = 0;
-  kills: number = 0;
-  neutralMinionsKilled: number = 0;
-  totalMinionsKilled: number = 0;
-  puuid: string = '';
-  championId: number = 0;
-  championNames: string[] = [];
-  wins: string[] = [];
-  gameMode: string = '';
-  queueId: number = 0;
-  gameType: string = '';
-  gameDuration: number = 0;
-  gameDate: number = 0;
-  gameDateFin: string = '';
-  items: string[] = [];
+  playerPuuid: string = '';
   playersByMatch: Participant[][] = [];
 
-  @Input() userId: string = '';
+  gameType: string = '';
 
   private queueTypes: { [key: number]: string } = {
     420: 'Clasificatoria Solo/dúo',
@@ -48,37 +35,32 @@ export class HistorialPlayerComponent implements OnInit {
     private matchService: MatchService,
     private sharedData: SharedDataService
   ) {}
-  
+
   ngOnInit() {
     this.getPlayerInfo();
   }
-  
+
   getPlayerInfo() {
     this.sharedData.accountData$.subscribe(data => {
       this.playerPuuid = data.puuid;
     });
-  
+
     this.matchService.getMatchId().subscribe(data => {
       this.player = [];
-      this.championNames = [];
-      this.items = [];
       this.playersByMatch = [];
-  
+
       data.forEach((match) => {
         let currentIndex = this.player.length;
-        console.log(match)
+        const formattedDate = new Date(match.info.gameEndTimestamp).toLocaleDateString("es-ES", {
+          day: "2-digit",
+          month: "short"
+        }).replace(".", "");
+
         match.info.participants.forEach((participant) => {
-          const formattedDate = new Date(match.info.gameEndTimestamp).toLocaleDateString("es-ES", {
-            day: "2-digit",
-            month: "short"
-          }).replace(".", "");
-  
           if (participant.puuid === this.playerPuuid) {
-            this.gameMode = match.info.gameMode;
-            this.queueId = match.info.queueId;
-            this.gameDate = match.info.gameEndTimestamp;
-            this.gameType = this.getGameType(this.queueId);
-  
+            const queueId = match.info.queueId;
+            this.gameType = this.getGameType(queueId);
+
             this.player.push({
               ...participant,
               gameDuration: match.info.gameDuration,
@@ -93,20 +75,19 @@ export class HistorialPlayerComponent implements OnInit {
               ].map(item => String(item)),
               gameDateFin: formattedDate
             });
-  
+
             this.sharedData.setChampionName(this.player);
           }
+
           if (!this.playersByMatch[currentIndex]) {
             this.playersByMatch[currentIndex] = [];
           }
-  
           this.playersByMatch[currentIndex].push({ ...participant });
         });
       });
     });
   }
-  
-  
+
   getGameType(queueId: number): string {
     return this.queueTypes[queueId] || 'Modo Desconocido';
   }
@@ -117,11 +98,6 @@ export class HistorialPlayerComponent implements OnInit {
     return `${minutes}:${remainingSeconds.toString().padStart(2, '0')} min`;
   }
 
-  getAllCs(minionsJg: number, minions: number): number {
-    const allCs = Math.floor(minionsJg + minions);
-    return allCs;
-  }
-
   isSameDate(currentDate: string | undefined, index: number): boolean {
     if (index === 0) return false;
     return this.player[index - 1]?.gameDateFin === currentDate;
@@ -130,9 +106,8 @@ export class HistorialPlayerComponent implements OnInit {
   getAllies(index: number, teamId: number): Participant[] {
     return this.playersByMatch[index]?.filter(p => p.teamId === teamId) || [];
   }
-  
+
   getEnemies(index: number, teamId: number): Participant[] {
     return this.playersByMatch[index]?.filter(p => p.teamId !== teamId) || [];
   }
-
 }

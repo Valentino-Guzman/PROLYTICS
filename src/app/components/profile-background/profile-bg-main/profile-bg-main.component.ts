@@ -55,7 +55,6 @@ export class ProfileBgMainComponent implements OnInit {
           this.champions.loadChampions().then(() => {
             this.championMastery.getChampionMastery().subscribe((data: Mastery[]) => {
               this.championInfo[0] = data[0];
-              console.log(this.championInfo, 'maestria');
               });
             }
           );

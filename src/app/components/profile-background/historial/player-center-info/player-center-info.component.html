@@ -1,0 +1,21 @@
+<div class="historial-center">
+    <img class="champion-img" 
+         [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + championName + '.png'" 
+         alt="{{ championName }}">
+    <div class="player-stats">
+      <div class="items-container">
+        <div 
+          class="item-box" *ngFor="let item of items"
+          [ngClass]="{ 'item-box-win': win, 'item-box-loss': !win }"
+        >
+          <img *ngIf="item && item !== '0'" class="item-img" 
+               [src]="'https://ddragon.leagueoflegends.com/cdn/15.7.1/img/item/' + item + '.png'" 
+               alt="item">
+        </div>
+      </div>
+      <div class="player-kda-container">
+        <span class="player-kda">{{ kda.kills }} / {{ kda.deaths }} / {{ kda.assists }}</span>
+      </div>
+    </div>
+  </div>
+  

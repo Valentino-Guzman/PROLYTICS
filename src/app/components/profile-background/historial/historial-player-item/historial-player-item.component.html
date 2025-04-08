@@ -1,0 +1,30 @@
+<app-game-date-header 
+  *ngIf="!isSameDate"
+  [date]="playerInfo.gameDateFin"
+></app-game-date-header>
+
+<div 
+    class="historial-container"
+    [ngClass]="{ 'historial-container-win': playerInfo.win, 'historial-container-loss': !playerInfo.win }"
+>
+    <app-match-summary-card
+    [win]="playerInfo.win"
+    [gameType]="gameType"
+    [duration]="convertGameDuration(playerInfo.gameDuration)"
+    ></app-match-summary-card>
+
+  <app-player-center-info
+    [championName]="playerInfo.championName"
+    [items]="playerInfo.items"
+    [kda]="{ kills: playerInfo.kills, deaths: playerInfo.deaths, assists: playerInfo.assists }"
+    [win]="playerInfo.win"
+  ></app-player-center-info>
+
+    <div class="historial-card-right">
+        <app-team-display [team]="allies"></app-team-display>
+        <app-team-display [team]="enemies"></app-team-display>
+        <div class="display">
+            <app-display-historial [win]="playerInfo.win"></app-display-historial>
+        </div>
+    </div>
+</div>

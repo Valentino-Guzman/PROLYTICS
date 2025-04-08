@@ -24,7 +24,6 @@ export class ChampionMasteryComponent implements OnInit{
     this.champions.loadChampions().then(() => {
       this.championMastery.getChampionMastery().subscribe((data: Mastery[]) => {
         this.masteryChampions = data;
-        console.log(this.masteryChampions, 'maestria');
         });
       }
     );

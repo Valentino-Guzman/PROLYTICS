@@ -1,0 +1,35 @@
+.historial-container {
+    width: 800px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+}
+
+.historial-container-win {
+    background: rgba(52, 103, 27, 0.5);
+}
+
+.historial-container-loss {
+    background-color: rgba(103, 27, 27, 0.46);
+}
+
+.historial-container-win, .historial-container-loss {
+    height: 130px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.historial-card-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.display {
+    display: flex;
+}

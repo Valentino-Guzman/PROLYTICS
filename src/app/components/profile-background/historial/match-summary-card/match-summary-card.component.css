@@ -1,0 +1,56 @@
+.historial-card-left {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.border-card {
+    width: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 130px;
+}
+
+.border-card-win {
+    background-color: rgba(109, 190, 69, 0.62);
+}
+
+.border-card-loss {
+    background-color: rgba(190, 69, 69, 0.62);
+}
+
+.info-card {
+    width: 100px;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-card p {
+    margin: 0;
+}
+
+.info-card-loss p {
+    color: #DE3131;
+}
+
+.info-card-win p {
+    color: #31DE45;
+}
+
+.info-card span {
+    font-size: 11px;
+    color: #FFFFFF;
+    font-weight: 300;
+}
+
+.info-bottom {
+    margin-bottom: 5px;
+}
+
+.game-type img {
+    margin-bottom: 4px;
+}

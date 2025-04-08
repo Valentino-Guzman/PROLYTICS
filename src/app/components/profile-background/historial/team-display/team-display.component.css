@@ -1,0 +1,33 @@
+.historial-card-right {
+    width: 160px;
+    display: flex;
+    position: absolute;
+    right: 125px;
+    top: 50%;
+    transform: translateY(-48%);
+}
+
+.team-info {
+    display: flex;
+}
+
+.champions-icon img {
+    clip-path: inset(6% 6% 4% 6%);
+    border-radius: 10px;
+    width: 22px;
+}
+
+.player-container {
+    display: flex;
+    align-items: center;
+    height: 22px;
+}
+
+.info-player p {
+    margin: 0;
+    margin-left: 2px;
+    color: #d9d9d9; 
+    font-weight: 400;
+    font-size: 10px;
+    width: 100px;
+}

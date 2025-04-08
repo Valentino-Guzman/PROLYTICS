@@ -4,7 +4,6 @@
     overflow: hidden;
 }
 
-/* Fondo en blanco y negro con opacidad */
 .profile-bg-main::before {
     content: "";
     position: absolute;

@@ -1,0 +1,10 @@
+<app-historial-player-item
+  *ngFor="let playerInfo of player; let i = index"
+  [playerInfo]="playerInfo"
+  [gameType]="gameType"
+  [index]="i"
+  [isSameDate]="isSameDate(playerInfo?.gameDateFin, i)"
+  [convertGameDuration]="convertGameDuration"
+  [allies]="getAllies(i, playerInfo.teamId)"
+  [enemies]="getEnemies(i, playerInfo.teamId)"
+></app-historial-player-item>

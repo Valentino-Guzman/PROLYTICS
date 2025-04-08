@@ -1,0 +1,10 @@
+<div class="team-section">
+    <div *ngFor="let p of team" class="player-container">
+      <div class="champions-icon">
+        <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + p.championName + '.png'" alt="">
+      </div>
+      <div class="info-player">
+        <p>{{ p.riotIdGameName }}</p>
+      </div>
+    </div>
+  </div>

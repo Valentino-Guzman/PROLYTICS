@@ -1,0 +1,23 @@
+<div 
+  class="historial-card-left" 
+  [ngClass]="{ 'historial-container-win': win, 'historial-container-loss': !win }"
+>
+  <div 
+    class="border-card"
+    [ngClass]="{ 'border-card-win': win, 'border-card-loss': !win }"
+  ></div>
+
+  <div 
+    class="info-card"
+    [ngClass]="{ 'info-card-win': win, 'info-card-loss': !win }"
+  >
+    <div class="game-type">
+      <span>{{ gameType }}</span>
+      <img src="webp/profile/separation.png" alt="">
+    </div>
+    <div class="info-bottom">
+      <p>{{ win ? 'Victoria' : 'Derrota' }}</p>
+      <span>{{ duration }}</span> 
+    </div>
+  </div>    
+</div>

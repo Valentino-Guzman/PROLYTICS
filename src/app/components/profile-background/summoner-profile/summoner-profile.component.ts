@@ -40,9 +40,8 @@ export class SummonerProfileComponent {
 
     this.eloPlayerService.getEloPlayer().subscribe(data => {
       data.forEach(tierRank => {
-        this.eloType = tierRank.tier
-        console.log(tierRank.tier)
+        this.eloType = tierRank.tier;
       });
-    })
+    });
   }
 }

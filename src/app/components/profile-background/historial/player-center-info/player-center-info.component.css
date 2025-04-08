@@ -1,0 +1,69 @@
+.historial-center {
+    display: flex;
+    align-items: center;
+    width: 340px;
+}
+
+.champion-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    clip-path: circle(45% at center);
+}
+
+.items-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.items-container img {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+}
+
+.item-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-box-win {
+    background-color:#579738;
+}
+
+.item-box-loss {
+    background-color:#973838;
+}
+
+.player-kda {
+    color: #FFFFFF;
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.player-kda-container {
+    display: flex;
+    align-items: center;   
+}
+
+.player-stats {
+    margin-left: 10px;
+}
+
+.stats-player {
+    display: flex;
+}
+
+.stats-player-win img {
+    background-color: #579738;
+}
+
+.stats-player-loss img {
+    background-color: #973838;
+}
