@@ -29,7 +29,6 @@ p {
 .info-profile {
     display: flex;
     flex-direction: column;
-    margin-left: 15px;
 }
 
 .nickname {
@@ -38,11 +37,35 @@ p {
 }
 
 .icon-profile {
-    border-radius: 50px;
+    position: relative; 
+    width: 180px;
+    height: 70px;
+  }
+  
+.icon-profile img {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+}
+  
+.icon-wing {
+    position: absolute;
+    top: -90px;
+    left: -20px;
+    width: 180px;
+    height: 120px;
+    z-index: 10;
+} 
+  
+.icon-wing img {
+    width: 200px;
+    height: auto;
 }
 
-.icon-profile img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+.icon {
+    position: relative;
+    top: 30px;
+    left: 45px;
 }
