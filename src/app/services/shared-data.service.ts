@@ -19,11 +19,6 @@ export class SharedDataService {
     private championName = new BehaviorSubject<Participant[]>([]);
     championName$ = this.championName.asObservable();
     
-    private accountDataSubject = new BehaviorSubject<Account | null>(null);
-    accountDataSubject$ = this.accountDataSubject.asObservable();
-
-
-
     constructor() {}
   
     setAccountData(data: Account): void {
@@ -40,9 +35,5 @@ export class SharedDataService {
 
     setPuuid(puuid: string) {
 
-    }
-
-    hasAccountData(): boolean {
-      return this.accountDataSubject.getValue() !== null;
     }
 }

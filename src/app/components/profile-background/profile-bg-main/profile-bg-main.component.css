@@ -1,9 +1,24 @@
 .profile-bg-main {
+    position: relative;
     display: flex;
-    background-image: url('../../../../../public/svg/profile/hecarim-high.png');
-    background-color: rgba(0, 0, 0, 0.4);
-    background-repeat: no-repeat;
-    background-position: center;
+    overflow: hidden;
+}
+
+/* Fondo en blanco y negro con opacidad */
+.profile-bg-main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--bg-url);
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    filter: grayscale(100%) brightness(50%);
+    z-index: 0;
+}
+
+.profile-bg-main > * {
+    position: relative;
+    z-index: 1;
 }

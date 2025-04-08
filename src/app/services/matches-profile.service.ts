@@ -20,7 +20,7 @@ export class ChampionsProfileService {
     getMatchesProfile(): Observable<string[]> {
       const start = 0;
       const count = 5;
-      const total = 1;
+      const total = 15;
     
       return this.sharedData.accountData$.pipe(
         switchMap((data: Account) => {
