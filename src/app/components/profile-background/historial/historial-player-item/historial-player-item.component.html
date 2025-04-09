@@ -24,7 +24,19 @@
         <app-team-display [team]="allies"></app-team-display>
         <app-team-display [team]="enemies"></app-team-display>
         <div class="display">
-            <app-display-historial [win]="playerInfo.win"></app-display-historial>
+          <app-display-historial-button 
+            [win]="playerInfo.win" 
+            [isRotated]="isRotated"
+            (toggle)="toggleHistorial()"
+          ></app-display-historial-button>
         </div>
+      </div>
     </div>
+
+<div class="display-historial">
+  <app-historial-stats-display 
+    [isRotated]="isRotated"
+    [team]="allies"
+    [puuid]="playerInfo.puuid"
+  ></app-historial-stats-display>
 </div>

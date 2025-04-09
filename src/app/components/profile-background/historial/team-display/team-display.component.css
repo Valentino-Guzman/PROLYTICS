@@ -12,6 +12,8 @@
 }
 
 .champions-icon img {
+    display: flex;
+
     clip-path: inset(6% 6% 4% 6%);
     border-radius: 10px;
     width: 22px;
@@ -20,7 +22,7 @@
 .player-container {
     display: flex;
     align-items: center;
-    height: 22px;
+    height: 23px;
 }
 
 .info-player p {

@@ -7,14 +7,15 @@
     flex-direction: row;
     position: relative;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .historial-container-win {
-    background: rgba(52, 103, 27, 0.5);
+    background: linear-gradient(to right, rgba(52, 103, 27, 0.5), rgba(52, 103, 27, 0.6));
 }
 
 .historial-container-loss {
-    background-color: rgba(103, 27, 27, 0.46);
+    background: linear-gradient(to right, rgba(103, 27, 27, 0.6), rgba(103, 27, 27, 0.46));
 }
 
 .historial-container-win, .historial-container-loss {
@@ -32,4 +33,11 @@
 
 .display {
     display: flex;
+}
+
+.display-historial {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-radius: 5px;
 }

@@ -1,6 +1,6 @@
 <button 
   class="border-card"
-  (click)="isRotated = !isRotated"
+  (click)="toggle.emit()"
   [ngClass]="{ 
     'border-card-win': win, 
     'border-card-loss': !win 
@@ -16,4 +16,3 @@
     <path d="m6 9 6 6 6-6"></path>
   </svg>
 </button>
-

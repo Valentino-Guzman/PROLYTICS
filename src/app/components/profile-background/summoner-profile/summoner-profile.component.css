@@ -4,6 +4,8 @@
     background-color: #3B393E;
     border-radius: 10px;
     padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #4A474D;
 }
 
 h1, h2 {

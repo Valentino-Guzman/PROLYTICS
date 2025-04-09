@@ -5,11 +5,12 @@ import { MatchSummaryCardComponent } from "../match-summary-card/match-summary-c
 import { PlayerCenterInfoComponent } from "../player-center-info/player-center-info.component";
 import { TeamDisplayComponent } from "../team-display/team-display.component";
 import { CommonModule } from '@angular/common';
-import { DisplayHistorialComponent } from "../display-historial/display-historial.component";
+import { DisplayHistorialButtonComponent } from "../display-historial-button/display-historial-button.component";
+import { HistorialStatsDisplayComponent } from "../historial-stats-display/historial-stats-display.component";
 
 @Component({
   selector: 'app-historial-player-item',
-  imports: [CommonModule, GameDateHeaderComponent, MatchSummaryCardComponent, PlayerCenterInfoComponent, TeamDisplayComponent, DisplayHistorialComponent],
+  imports: [CommonModule, GameDateHeaderComponent, MatchSummaryCardComponent, PlayerCenterInfoComponent, TeamDisplayComponent, DisplayHistorialButtonComponent, HistorialStatsDisplayComponent],
   templateUrl: './historial-player-item.component.html',
   styleUrl: './historial-player-item.component.css'
 })
@@ -21,4 +22,9 @@ export class HistorialPlayerItemComponent {
   @Input() convertGameDuration!: (seconds: number) => string;
   @Input() allies: Participant[] = [];
   @Input() enemies: Participant[] = [];
+  @Input() isRotated: boolean = false;
+
+  toggleHistorial() {
+    this.isRotated = !this.isRotated;
+  }
 }
