@@ -24,7 +24,7 @@
 }
 
 .panel-header p {
-    font-weight: 200;
+    font-weight: 400;
     width: 125px;
 }
 
@@ -39,8 +39,6 @@
     align-items: center;
     border-radius: 10px;
     padding: 5px;
-    background: linear-gradient(to right (58, 56, 63, 0.95), rgba(40, 39, 45, 0.95));
-    backdrop-filter: blur(4px);  
 }
 
 .user-profile {
