@@ -37,7 +37,9 @@
 
 .display-historial {
     display: flex;
+    flex-direction: column;
     margin-top: 10px;
     margin-left: 20px;
     border-radius: 5px;
 }
+

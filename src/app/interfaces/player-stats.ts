@@ -12,16 +12,19 @@ export interface Participant {
     riotIdGameName: string;
     totalDamageTaken: string;
     totalDamageDealtToChampions: string;
+    champLevel: number;
+    summoner1Id: number;
+    summoner2Id: number;
     teamId: number;
-    item0?: number;
-    item1?: number;
-    item2?: number;
-    item3?: number;
-    item4?: number;
-    item5?: number;
-    item6?: number;
-    items?: string[];
-    gameDateFin?: string;
+    item0: number;
+    item1: number;
+    item2: number;
+    item3: number;
+    item4: number;
+    item5: number;
+    item6: number;
+    items: string[];
+    gameDateFin: string;
 }
   
 export interface Info {

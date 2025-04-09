@@ -10,14 +10,15 @@
         <div class="player-info">
           <div class="champion-image">
             <img [src]="`https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/${p.championName}.png`" alt="">
+            <span class="champ-level">{{p.champLevel}}</span>
           </div>
           <p>{{ p.riotIdGameName }}</p>
         </div>
         <div class="damage-bars">
           <div class="damage-block">
             <div class="damage-value tooltip-container">
-              {{ p.totalDamageDealtToChampions }}
-              <span class="tooltip-text">Daño infligido: {{ p.totalDamageDealtToChampions }}</span>
+              {{ p.totalDamageDealtToChampions | number: '1.0-0' }}
+              <span class="tooltip-text">Daño infligido: {{ p.totalDamageDealtToChampions | number: '1.0-0' }}</span>
             </div>
             <div class="damage-bar-container">
               <div class="damage-bar dealt" [style.width.%]="getBarWidth(p.totalDamageDealtToChampions)"></div>
@@ -25,8 +26,8 @@
           </div>
           <div class="damage-block">
             <div class="damage-value tooltip-container">
-              {{ p.totalDamageTaken }}
-              <span class="tooltip-text">Daño recibido: {{ p.totalDamageTaken }}</span>
+              {{ p.totalDamageTaken | number: '1.0-0' }}
+              <span class="tooltip-text">Daño recibido: {{ p.totalDamageTaken | number: '1.0-0' }}</span>
             </div>
             <div class="damage-bar-container">
               <div class="damage-bar taken" [style.width.%]="getBarWidth(p.totalDamageTaken)"></div>
