@@ -37,6 +37,16 @@
         <div class="kda">
           <p>{{p.kills}} / <strong>{{p.deaths}}</strong> / {{p.assists}}</p>
         </div>  
+        <div class="runes">
+          <img [src]="runesService.getRuneIconUrl(p.perks.styles[0].selections[0].perk)" alt="Runa clave" width="32" height="32" />
+          <div class="rune-secondary">
+            <img [src]="runesService.getStyleIconUrl(p.perks.styles[1].style)" alt="Estilo secundario" width="32" height="32" />
+          </div>
+        </div>
+        <div class="summoner-spells">
+          <img [src]="spellService.getSpellIconUrl(p.summoner1Id)" alt="Hechizo 1" width="22" height="22" />
+          <img [src]="spellService.getSpellIconUrl(p.summoner2Id)" alt="Hechizo 2" width="22" height="22" />
+        </div>
       </div>
     </div>
   </div>

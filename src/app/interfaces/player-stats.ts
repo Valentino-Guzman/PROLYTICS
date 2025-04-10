@@ -25,8 +25,26 @@ export interface Participant {
     item6: number;
     items: string[];
     gameDateFin: string;
+    perks: {
+        statPerks: StatPerks;
+        styles: Styles[];
+    }
 }
   
+export interface StatPerks {
+    defense: number;
+    flex: number;
+    offense: number;
+}
+
+export interface Styles {
+    description: string; 
+    selections: [
+        { perk: number, var1: number, var2: number, var3: number },
+    ]
+    style: number;
+}
+
 export interface Info {
     participants: Participant[];
     gameMode: string;
@@ -37,5 +55,4 @@ export interface Info {
 
 export interface DataMatch {
     info: Info;
-
 }

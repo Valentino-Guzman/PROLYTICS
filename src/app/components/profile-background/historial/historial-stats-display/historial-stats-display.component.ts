@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Participant } from '../../../../interfaces/player-stats';
+import { RunesReforgedService } from '../../../../services/runes-reforged.service';
+import { SummonerSpellService } from '../../../../services/summoner-spell.service';
 
 
 @Component({
@@ -10,9 +12,21 @@ import { Participant } from '../../../../interfaces/player-stats';
   styleUrl: './historial-stats-display.component.css'
 })
 export class HistorialStatsDisplayComponent {
+  
   @Input() isRotated: boolean = false;
   @Input() team: Participant[] = [];
   @Input() puuid: string = '';
+
+  constructor(
+    public runesService: RunesReforgedService,
+    public spellService: SummonerSpellService
+  ) {}
+
+  async ngOnInit() {
+    await this.runesService.loadRunes();
+    await this.spellService.loadSummonerSpells();
+
+  }
 
   getBarWidth(value: number | string): number {
     const max = Math.max(
@@ -23,5 +37,4 @@ export class HistorialStatsDisplayComponent {
     );
     return (Number(value) / max) * 100;
   }
-
 }

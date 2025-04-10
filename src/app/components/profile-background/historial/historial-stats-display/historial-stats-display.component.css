@@ -175,6 +175,21 @@
     color: #DE3131;
 }
 
+.runes {
+    display: flex;
+    align-items: flex-end;
+}
+
+.rune-secondary img {
+    width: 18px;
+    height: 18px;
+}
+
+.summoner-spells {
+    display: flex;
+    gap: 2px;
+}
+
 @keyframes slideDownFade {
     from {
       opacity: 0;

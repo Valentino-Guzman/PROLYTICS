@@ -83,7 +83,7 @@ export class HistorialPlayerComponent implements OnInit {
             this.playersByMatch[currentIndex] = [];
           }
           this.playersByMatch[currentIndex].push({ ...participant });
-          console.log(this.player);
+          console.log(this.playersByMatch)
         });
       });
     });
