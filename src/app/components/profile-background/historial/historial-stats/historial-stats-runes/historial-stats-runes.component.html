@@ -1,26 +1,35 @@
-<div class="tooltip-container">
-    <div class="runes">
-      <div class="rune-first">
-        <img [src]="runesService.getRuneIconUrl(p.styles[0].selections[0].perk)" alt="Runa clave" />
+<div class="tooltip-container" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false">
+  <div class="runes">
+    <div class="rune-first">
+      <img [src]="runesService.getRuneIconUrl(p.styles[0].selections[0].perk)" alt="Runa clave" />
+    </div>
+    <div class="rune-second">
+      <img [src]="runesService.getStyleIconUrl(p.styles[1].style)" alt="Estilo secundario" />
+    </div>
+  </div>
+  
+  <div class="tooltip-text rune-tooltip">
+    <div class="rune-group-column">
+      <div class="rune-main">
+        <img [src]="runesService.getRuneIconUrl(p.styles[0].selections[0].perk)" alt="Runa principal" />
       </div>
-      <div class="rune-second">
-        <img [src]="runesService.getStyleIconUrl(p.styles[1].style)" alt="Estilo secundario" />
+      <div class="rune-secondary-row">
+        <ng-container *ngFor="let rune of p.styles[0].selections.slice(1)">
+          <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa primaria secundaria" />
+        </ng-container>
       </div>
     </div>
-    <div class="tooltip-text rune-tooltip">
-      <div class="rune-group">
-        <ng-container *ngFor="let rune of p.styles[0].selections">
-          <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa primaria" />
-        </ng-container>
-      </div>
-      <div class="rune-group">
-        <ng-container *ngFor="let rune of p.styles[1].selections">
-          <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa secundaria" />
-        </ng-container>
-      </div>
-      <div class="rune-group">
-        <ng-container *ngFor="let stat of p.statPerks | keyvalue">
-          <img [src]="runesService.getStatPerkIcon(stat.key, stat.value)" alt="Stat bonus" />
-        </ng-container>
-      </div>
+
+    <div class="rune-group">
+      <ng-container *ngFor="let rune of p.styles[1].selections">
+        <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa secundaria" />
+      </ng-container>
+    </div>
+
+    <div class="rune-group">
+      <ng-container *ngFor="let stat of p.statPerks | keyvalue">
+        <img [src]="runesService.getStatPerkIcon(stat.key, stat.value)" alt="Stat bonus" />
+      </ng-container>
+    </div>
+  </div>
 </div>

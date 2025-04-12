@@ -10,8 +10,8 @@ import { Participant, StatPerks, Styles } from '../../../../../interfaces/player
   styleUrl: './historial-stats-runes.component.css'
 })
 export class HistorialStatsRunesComponent {
-
   @Input() p!: { statPerks: StatPerks; styles: Styles[] } ;
+  showTooltip = false;
 
   constructor(public runesService: RunesReforgedService) {}
 }
