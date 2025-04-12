@@ -4,7 +4,7 @@
         <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + p.championName + '.png'" alt="">
       </div>
       <div class="info-player">
-        <p>{{ p.riotIdGameName }}</p>
+        <a [routerLink]="['/profile', `${p.riotIdGameName}-${p.riotIdTagline}`]">{{ p.riotIdGameName }}</a>
       </div>
     </div>
   </div>

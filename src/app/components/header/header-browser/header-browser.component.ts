@@ -5,9 +5,8 @@ import { Account } from '../../../interfaces/account';
 import { SharedDataService } from '../../../services/shared-data.service';
 import { Summoner } from '../../../interfaces/summoner';
 import { PuuidService } from '../../../services/puuid.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ChampionsProfileService } from '../../../services/matches-profile.service';
-import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-header-browser',
@@ -62,9 +61,7 @@ export class HeaderBrowserComponent {
     this.router.navigate(['/profile', this.nameSave])
     this.name = '';
   }
-  
-  
-    
+
 }
 
 

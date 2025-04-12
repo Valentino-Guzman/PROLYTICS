@@ -83,8 +83,9 @@
     gap: 2px;
 }
 
-.details p {
+.details a {
     display: flex;
+    text-decoration: none;
 }
 
 .details {

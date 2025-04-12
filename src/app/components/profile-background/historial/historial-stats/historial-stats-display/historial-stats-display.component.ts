@@ -8,11 +8,10 @@ import { HistorialStatsSpellsComponent } from "../historial-stats-spells/histori
 import { HistorialStatsDamageBarComponent } from "../historial-stats-damage-bar/historial-stats-damage-bar.component";
 import { HistorialStatsChampionComponent } from "../historial-stats-champion/historial-stats-champion.component";
 import { HistorialStatsItemsComponent } from "../historial-stats-items/historial-stats-items.component";
-
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-historial-stats-display',
-  imports: [CommonModule, HistorialStatsRunesComponent, HistorialStatsSpellsComponent, HistorialStatsDamageBarComponent, HistorialStatsChampionComponent, HistorialStatsItemsComponent],
+  imports: [CommonModule, HistorialStatsRunesComponent, HistorialStatsSpellsComponent, HistorialStatsDamageBarComponent, HistorialStatsChampionComponent, HistorialStatsItemsComponent, RouterModule],
   templateUrl: './historial-stats-display.component.html',
   styleUrl: './historial-stats-display.component.css'
 })
@@ -25,7 +24,7 @@ export class HistorialStatsDisplayComponent {
 
   constructor(
     public runesService: RunesReforgedService,
-    public spellService: SummonerSpellService
+    public spellService: SummonerSpellService,
   ) {}
 
   async ngOnInit() {

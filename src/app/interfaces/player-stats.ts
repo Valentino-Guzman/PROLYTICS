@@ -10,6 +10,7 @@ export interface Participant {
     win: string;
     gameDuration: number;
     riotIdGameName: string;
+    riotIdTagline: string;
     totalDamageTaken: number;
     totalDamageDealtToChampions: number;
     champLevel: number;

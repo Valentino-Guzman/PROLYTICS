@@ -13,7 +13,6 @@
 
 .champions-icon img {
     display: flex;
-
     clip-path: inset(6% 6% 4% 6%);
     border-radius: 10px;
     width: 22px;
@@ -22,14 +21,19 @@
 .player-container {
     display: flex;
     align-items: center;
-    height: 23px;
+    height: 22px;
 }
 
-.info-player p {
+.info-player {
+    display: flex;
+    width: 100px;
+}
+
+.info-player a {
     margin: 0;
     margin-left: 2px;
     color: #d9d9d9; 
     font-weight: 400;
-    font-size: 10px;
-    width: 100px;
+    font-size: 11px;
+    text-decoration: none;
 }

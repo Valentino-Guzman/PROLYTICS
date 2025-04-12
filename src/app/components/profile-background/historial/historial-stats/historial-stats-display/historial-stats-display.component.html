@@ -22,7 +22,9 @@
       </app-historial-stats-champion>
 
       <div class="details">
-        <p>{{ p.riotIdGameName }}</p>
+        <a [routerLink]="['/profile', `${p.riotIdGameName}-${p.riotIdTagline}`]">
+          <p>{{ p.riotIdGameName }}</p>
+        </a>
       </div>
     </div>
 
