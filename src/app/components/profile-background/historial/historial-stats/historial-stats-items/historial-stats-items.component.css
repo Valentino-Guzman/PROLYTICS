@@ -1,0 +1,21 @@
+.items-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.items-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    margin-right: 2px;
+    background-color: #4A474D;
+}
+
+.items-box img {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+}

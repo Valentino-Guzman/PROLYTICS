@@ -1,0 +1,10 @@
+<div class="items-container">
+    <div class="items-box" *ngFor="let item of items">
+        <img 
+          class="item" 
+          *ngIf="item" 
+          [src]="'https://ddragon.leagueoflegends.com/cdn/15.7.1/img/item/' + item + '.png'" 
+          alt="item"
+        >
+    </div>
+</div>

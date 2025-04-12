@@ -6,6 +6,7 @@ import { ProfileBgMainComponent } from './profile-bg-main/profile-bg-main.compon
 const routes: Routes = [
   { path: '', component: ProfileBgMainComponent } 
 ];
+
 @NgModule({
   declarations: [],
   imports: [

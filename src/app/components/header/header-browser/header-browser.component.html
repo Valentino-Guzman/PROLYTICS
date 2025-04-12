@@ -4,6 +4,7 @@
             type="text"
             placeholder="BUSCAR"
             [(ngModel)]="name"
+            (keyup.enter)="browseAccount()"
             >
         
         <button (click)="browseAccount()">

@@ -1,0 +1,37 @@
+.champion-image {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    margin-left: 5px;
+}
+  
+.champion-image img {
+    clip-path: inset(6% 6% 4% 6%);
+    width: 45px;
+    height: 45px;
+    border-radius: 15px;
+}
+  
+.champ-level {
+    display: flex;
+    position: absolute;
+    bottom: -2px;
+    right: -4px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 10px;
+    border-radius: 4px;
+    z-index: 2;
+    font-weight: bold;
+    padding: 2px 4px;
+    border: 1px solid #5D5A60;
+}
+
+.details p {
+    display: flex;
+}
+
+.details {
+    display: flex;
+    font-size: 14px;
+}

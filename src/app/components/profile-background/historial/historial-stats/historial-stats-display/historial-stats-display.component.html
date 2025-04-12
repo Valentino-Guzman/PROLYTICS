@@ -1,0 +1,46 @@
+<div *ngIf="isRotated" class="panel">
+  <div class="panel-header">
+    <p>{{ team[0].win ? 'Victoria' : 'Derrota' }}</p>
+    <span>Resumen de daño</span>
+    <span>K/D/A</span>
+  </div>
+
+  <div *ngFor="let p of team" class="panel-info" [ngClass]="{ 'user-profile': p.puuid === puuid }">
+    <div class="player-info">
+      <div class="player-setup">
+        <app-historial-stats-runes 
+          [p]="{ statPerks: p.perks.statPerks, styles: p.perks.styles }">
+        </app-historial-stats-runes>
+      </div>
+
+      <app-historial-stats-spells 
+        [p]="{ summoner1Id: p.summoner1Id, summoner2Id: p.summoner2Id }">
+      </app-historial-stats-spells>
+
+      <app-historial-stats-champion 
+        [p]="{ championName: p.championName, champLevel: p.champLevel }">
+      </app-historial-stats-champion>
+
+      <div class="details">
+        <p>{{ p.riotIdGameName }}</p>
+      </div>
+    </div>
+
+    <app-historial-stats-damage-bar 
+      [p]="{ totalDamageDealtToChampions: p.totalDamageDealtToChampions, totalDamageTaken: p.totalDamageTaken }">
+    </app-historial-stats-damage-bar>
+
+    <div class="kda">
+      <p>{{ p.kills }} / <strong>{{ p.deaths }}</strong> / {{ p.assists }}</p>
+    </div>
+
+    <app-historial-stats-items 
+      *ngIf="itemMap[p.puuid]" 
+      [items]="itemMap[p.puuid]">
+    </app-historial-stats-items>
+
+    <div class="minions">
+      <p>{{ p.totalMinionsKilled + p.neutralMinionsKilled }} CS</p>
+    </div>
+  </div>
+</div>

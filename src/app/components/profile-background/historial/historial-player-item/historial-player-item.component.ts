@@ -6,7 +6,7 @@ import { PlayerCenterInfoComponent } from "../player-center-info/player-center-i
 import { TeamDisplayComponent } from "../team-display/team-display.component";
 import { CommonModule } from '@angular/common';
 import { DisplayHistorialButtonComponent } from "../display-historial-button/display-historial-button.component";
-import { HistorialStatsDisplayComponent } from "../historial-stats-display/historial-stats-display.component";
+import { HistorialStatsDisplayComponent } from "../historial-stats/historial-stats-display/historial-stats-display.component";
 
 @Component({
   selector: 'app-historial-player-item',

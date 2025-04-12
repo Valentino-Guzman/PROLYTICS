@@ -41,12 +41,17 @@ export class RunesReforgedService {
     const style = this.styleMap.get(styleId);
     return style ? `https://ddragon.leagueoflegends.com/cdn/img/${style.icon}` : '';
   }
-
-  getRuneName(perkId: number): string {
-    return this.runeMap.get(perkId)?.name ?? 'Desconocida';
-  }
-
-  getStyleName(styleId: number): string {
-    return this.styleMap.get(styleId)?.name ?? 'Desconocido';
-  }
+  getStatPerkIcon(type: string, value: number): string {
+    const statMap: Record<number, string> = {
+      5001: 'StatModsHealthScalingIcon.png',    
+      5002: 'StatModsArmorIcon.png',             
+      5003: 'StatModsMagicResIcon.png',
+      5005: 'StatModsAttackSpeedIcon.png',
+      5007: 'StatModsCDRScalingIcon.png',        
+      5008: 'StatModsAdaptiveForceIcon.png',     
+    };
+    const iconName = statMap[value] || 'StatModsAdaptiveForceIcon.png';
+    return `https://ddragon.leagueoflegends.com/cdn/img/perk-images/StatMods/${iconName}`;
+  };
 }
+

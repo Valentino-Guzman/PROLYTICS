@@ -1,0 +1,82 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+  
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    background-color: #222124;
+    color: #fff;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s;
+    font-size: 12px;
+    white-space: nowrap;
+}
+  
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.runes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.rune-first, .rune-second {
+    display: flex;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 4px;
+    border: 1px solid #5D5A60;
+    padding: 2px 4px;
+    width: 12px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+}
+  
+.runes img {
+    width: 14px;
+    height: 14px;
+}
+  
+.rune-second img {
+    width: 14px;
+    height: 14px;
+}
+
+.rune-tooltip {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 6px;
+    background-color: #222124;
+    border: 1px solid #5D5A60;
+    border-radius: 4px;
+}
+  
+.rune-group {
+    display: flex;
+    gap: 4px;
+}
+  
+.rune-group img {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #5D5A60;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1px;
+}
