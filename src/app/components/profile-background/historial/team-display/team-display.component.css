@@ -36,4 +36,10 @@
     font-weight: 400;
     font-size: 11px;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.info-player a:hover {
+    color: #FFFFFF;
+    font-weight: 500;
 }

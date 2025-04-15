@@ -1,6 +1,6 @@
-.border-card {
+.border-button {
     width: 35px;
-    height: 130px;
+    height: 120px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     margin-left: 20px;
@@ -15,16 +15,16 @@ button {
     border: none;
 }
 
-.border-card svg {
+.border-button svg {
     color: #382828;
     transition: transform 0.3s ease;
 }
 
-.border-card-win {
-    background-color: rgba(109, 190, 69, 0.60);
+.border-button-win {
+    background-color: rgb(41 158 219 / 60%);
 }
 
-.border-card-loss {
+.border-button-loss {
     background-color: rgba(190, 69, 69, 0.60);
 }
 

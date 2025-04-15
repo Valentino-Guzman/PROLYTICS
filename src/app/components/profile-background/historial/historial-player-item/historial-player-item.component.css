@@ -11,7 +11,7 @@
 }
 
 .historial-container-win {
-    background: linear-gradient(to right, rgba(52, 103, 27, 0.5), rgba(52, 103, 27, 0.6));
+    background: linear-gradient(to right, rgba(27, 64, 103, 0.5), rgba(27, 64, 103, 0.6));
 }
 
 .historial-container-loss {
@@ -19,7 +19,7 @@
 }
 
 .historial-container-win, .historial-container-loss {
-    height: 130px;
+    height: 120px;
     border-radius: 10px;
     margin-bottom: 10px;
 }

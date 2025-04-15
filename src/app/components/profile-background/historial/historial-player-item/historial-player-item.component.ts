@@ -7,6 +7,7 @@ import { TeamDisplayComponent } from "../team-display/team-display.component";
 import { CommonModule } from '@angular/common';
 import { DisplayHistorialButtonComponent } from "../display-historial-button/display-historial-button.component";
 import { HistorialStatsDisplayComponent } from "../historial-stats/historial-stats-display/historial-stats-display.component";
+import { EloPlayer } from '../../../../interfaces/elo-player';
 
 @Component({
   selector: 'app-historial-player-item',
@@ -19,7 +20,7 @@ export class HistorialPlayerItemComponent {
   @Input() gameType!: string;
   @Input() index!: number;
   @Input() isSameDate!: boolean;
-  @Input() convertGameDuration!: (seconds: number) => string;
+  @Input() convertGameDuration!: (seconds: number, csPerMin?: number) => string;
   @Input() allies: Participant[] = [];
   @Input() enemies: Participant[] = [];
   @Input() isRotated: boolean = false;

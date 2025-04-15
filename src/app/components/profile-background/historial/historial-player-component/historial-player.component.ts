@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Participant } from '../../../../interfaces/player-stats';
 import { MatchService } from '../../../../services/match.service';
 import { SharedDataService } from '../../../../services/shared-data.service';
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HistorialPlayerItemComponent } from "../historial-player-item/historial-player-item.component";
 
 @Component({
@@ -92,10 +92,17 @@ export class HistorialPlayerComponent implements OnInit {
     return this.queueTypes[queueId] || 'Modo Desconocido';
   }
 
-  convertGameDuration(seconds: number): string {
+  convertGameDuration(seconds: number, csTotal?: number): string {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
-    return `${minutes}:${remainingSeconds.toString().padStart(2, '0')} min`;
+    const formattedTime = `${minutes}:${remainingSeconds.toString().padStart(2, '0')} min`;
+
+    if (csTotal !== undefined) {
+      const csPerMin = (csTotal / (seconds / 60)).toFixed(2);
+      return `${csPerMin} CS/min`;
+    }
+
+    return formattedTime;
   }
 
   isSameDate(currentDate: string | undefined, index: number): boolean {

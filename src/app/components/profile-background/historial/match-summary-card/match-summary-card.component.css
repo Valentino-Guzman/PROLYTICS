@@ -7,11 +7,11 @@
     width: 10px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    height: 130px;
+    height: 120px;
 }
 
 .border-card-win {
-    background-color: rgba(109, 190, 69, 0.62);
+    background-color: rgba(69, 149, 190, 0.60);
 }
 
 .border-card-loss {
@@ -38,7 +38,7 @@
 }
 
 .info-card-win p {
-    color: #31DE45;
+   color: #3198DE;
 }
 
 .info-card span {

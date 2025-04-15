@@ -28,4 +28,9 @@ export class EloPlayerService {
       })
     )
   }
+
+  getEloPlayerById(puuid: string): Observable<EloPlayer[]> {
+    const url = `https://la2.api.riotgames.com/lol/league/v4/entries/by-puuid/${puuid}?api_key=${environment.apiKey}`;
+    return this.http.get<EloPlayer[]>(url, {});
+  }
 }

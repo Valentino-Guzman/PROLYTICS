@@ -38,10 +38,12 @@
     [isRotated]="isRotated"
     [team]="allies"
     [puuid]="playerInfo.puuid"
+    [duration]="convertGameDuration(playerInfo.gameDuration)"
   ></app-historial-stats-display>
   <app-historial-stats-display 
     [isRotated]="isRotated"
     [team]="enemies"
     [puuid]="playerInfo.puuid"
+    [duration]="convertGameDuration(playerInfo.gameDuration)"
   ></app-historial-stats-display>
 </div>

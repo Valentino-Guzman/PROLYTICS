@@ -88,19 +88,31 @@
     text-decoration: none;
 }
 
+.details p {
+    font-size: 13px;
+}
+
 .details {
     display: flex;
     font-size: 14px;
 }
 
 .minions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 70px;
 }
 
 .minions p {
-    display: flex;
+    font-size: 13px;
     font-weight: 300;
-    justify-content: center;
+    margin: 0;
+}
+
+.minions span {
+    font-size: 10px;
+    font-weight: 200;
 }
 
 @keyframes slideDownFade {

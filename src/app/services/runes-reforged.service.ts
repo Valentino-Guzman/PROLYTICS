@@ -41,7 +41,7 @@ export class RunesReforgedService {
     const style = this.styleMap.get(styleId);
     return style ? `https://ddragon.leagueoflegends.com/cdn/img/${style.icon}` : '';
   }
-  getStatPerkIcon(type: string, value: number): string {
+  getStatPerkIcon(value: number): string {
     const statMap: Record<number, string> = {
       5001: 'StatModsHealthScalingIcon.png',    
       5002: 'StatModsArmorIcon.png',             

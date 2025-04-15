@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Participant } from '../../../../../interfaces/player-stats';
 import { RunesReforgedService } from '../../../../../services/runes-reforged.service';
 import { SummonerSpellService } from '../../../../../services/summoner-spell.service';
@@ -9,17 +9,22 @@ import { HistorialStatsDamageBarComponent } from "../historial-stats-damage-bar/
 import { HistorialStatsChampionComponent } from "../historial-stats-champion/historial-stats-champion.component";
 import { HistorialStatsItemsComponent } from "../historial-stats-items/historial-stats-items.component";
 import { RouterModule } from '@angular/router';
+
+
 @Component({
   selector: 'app-historial-stats-display',
   imports: [CommonModule, HistorialStatsRunesComponent, HistorialStatsSpellsComponent, HistorialStatsDamageBarComponent, HistorialStatsChampionComponent, HistorialStatsItemsComponent, RouterModule],
   templateUrl: './historial-stats-display.component.html',
-  styleUrl: './historial-stats-display.component.css'
+  styleUrl: './historial-stats-display.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class HistorialStatsDisplayComponent {
   
   @Input() isRotated: boolean = false;
   @Input() team: Participant[] = [];
   @Input() puuid: string = '';
+  @Input() duration: string = '';
   itemMap: { [puuid: string]: (string | null)[] } = {};
 
   constructor(
@@ -45,4 +50,27 @@ export class HistorialStatsDisplayComponent {
       this.itemMap[p.puuid] = items;
     });
   }
+
+  parseDuration(durationStr: string): number {
+    const clean = durationStr.replace(' min', '');
+    const match = clean.match(/^(\d+):(\d+)$/);
+  
+    if (!match) return 0;
+  
+    const minutes = parseInt(match[1], 10);
+    const seconds = parseInt(match[2], 10);
+  
+    return minutes * 60 + seconds;
+  }
+  
+  getCsPerMinute(p: Participant): string {
+    const durationInSeconds = this.parseDuration(this.duration);
+  
+    const cs = p.totalMinionsKilled + p.neutralMinionsKilled;
+    const minutes = durationInSeconds / 60;
+    const csPerMin = cs / minutes;
+  
+    return csPerMin.toFixed(2);
+  }
+
 }
