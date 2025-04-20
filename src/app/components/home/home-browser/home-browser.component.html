@@ -1,0 +1,14 @@
+<div class="browser">
+    <div class="browser-search">
+        <input 
+            type="text"
+            placeholder="BUSCAR"
+            [(ngModel)]="name"
+            (keyup.enter)="browseAccount()"
+            >
+        
+        <button (click)="browseAccount()">
+            <img src="svg/header/lupa.svg" alt="">
+        </button>
+    </div>
+</div>

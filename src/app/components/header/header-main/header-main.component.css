@@ -1,10 +1,11 @@
 .encabezado {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    height: 132px;
-    background-color: #111111;
+    height: 100px;
+    background: linear-gradient(90deg, #111111, #1f1f1f);
     color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .encabezado-logo {
