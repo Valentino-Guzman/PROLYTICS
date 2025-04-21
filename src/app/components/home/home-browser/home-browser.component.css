@@ -7,7 +7,7 @@
 .browser-search input {
     width: 275px;
     height: 41px;
-    background: #2B2A29;
+    background: #2A2D30;
     border-radius: 15px;
     border: none;
     font-family: "Montserrat", sans-serif;
@@ -15,6 +15,14 @@
     color: #ffffff;
     padding-left: 25px;
     padding-right: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    transition: 0.2s ease-in-out;
+}
+
+.browser-search input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #16181a;
 }
 
 .browser-search button {
@@ -31,4 +39,8 @@
 .browser-search img {
     width: 20px;
     height: 20px;
+}
+
+.browser-search input:focus {
+    outline: none;
 }

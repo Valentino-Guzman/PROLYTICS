@@ -1,14 +1,15 @@
 <div class="browser">
     <div class="browser-search">
-        <input 
+        <input
+            id="search-input"
             type="text"
-            placeholder="BUSCAR"
+            placeholder="Nombre de invocador + #LAS"
             [(ngModel)]="name"
             (keyup.enter)="browseAccount()"
-            >
-        
-        <button (click)="browseAccount()">
-            <img src="svg/header/lupa.svg" alt="">
+            aria-label="Buscar cuenta"
+        >
+        <button (click)="browseAccount()" aria-label="Buscar">
+            <img src="svg/header/lupa.svg" alt="Buscar">
         </button>
     </div>
 </div>

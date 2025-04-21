@@ -22,7 +22,8 @@ export class HomeBrowserComponent {
   puuid: string = '';
   account: Account | null = null;
   nameSave: string = '';
-
+  isSearching: boolean = false; 
+  
   constructor(
     private accountService: AccountServiceService,
     private sharedData: SharedDataService,

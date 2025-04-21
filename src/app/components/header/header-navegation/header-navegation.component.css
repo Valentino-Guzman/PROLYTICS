@@ -1,16 +1,16 @@
-.navegacion {
+.navegation-container {
     display: flex;
     align-items: center;
 }
 
-.navegacion-links {
+.navegation-links {
     width: 250px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.navegacion-links a {
+.navegation-links a {
     position: relative;
     color: #ffffff;
     text-decoration: none;
@@ -19,7 +19,7 @@
     transition: color 0.3s;
 }
 
-.navegacion-links a::after {
+.navegation-links a::after {
     content: "";
     position: absolute;
     width: 0;
@@ -31,6 +31,6 @@
     transform: translateX(-50%);
 }
 
-.navegacion-links a:hover::after {
+.navegation-links a:hover::after {
     width: 100%;
 }

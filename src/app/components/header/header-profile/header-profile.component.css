@@ -1,8 +1,6 @@
 .profile img {
-    width: 64px;
-    height: 64px;
-    margin-top: -20px;
-    margin-left: 20px;
+    width: 32px;
+    height: 32px;
 }
 
 .profile {
@@ -10,9 +8,18 @@
     align-items: center;
 }
 
-.profile-info p {
-    font-weight: bold;
-    margin-left: 15px;
-    margin-right: 20px;
-    font-size: 12px;
+.profile-info a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 15px;
+    margin-left: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+.profile-info a:hover {
+    opacity: 1;
+    text-shadow: 0 0 10px #ffffff;
 }

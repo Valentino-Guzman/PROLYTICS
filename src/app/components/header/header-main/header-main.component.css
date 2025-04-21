@@ -1,11 +1,19 @@
 .encabezado {
+    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    height: 100px;
-    background: linear-gradient(90deg, #111111, #1f1f1f);
+    height: 80px;
+    background-color: rgb(19 22 25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    padding: 0 20px;
+}
+
+.navigation-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .encabezado-logo {
@@ -14,16 +22,6 @@
     align-items: center;
     width: 160px;
     margin-top: -45px;
-}
-
-.cat {
-    width: 64px;
-    height: 64px;
-}
-
-.riot {
-    width: 59px;
-    height: 40px;
 }
 
 .separador {
