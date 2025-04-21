@@ -1,9 +1,3 @@
-<div 
-  class="profile-bg-main" 
-  *ngFor="let champion of championInfo"
-  [ngStyle]="{
-    '--bg-url': 'url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + getChampionId(champion.championId) + '_2.jpg)'
-  }"
->
+<div class="profile-bg-main">
   <app-background></app-background>
 </div>

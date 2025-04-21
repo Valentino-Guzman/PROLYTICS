@@ -1,13 +1,15 @@
 .rank-container {
     width: 320px;
     height: 360px;
-    background: #3B393E;
+    background-color: rgb(19, 22, 25);
     border-radius: 10px;
     margin-top: 10px;
     margin-left: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #4A474D;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.10); 
+    color: #f8f8f8;
 }
+
 
 .iron {
     color: #948a7e;

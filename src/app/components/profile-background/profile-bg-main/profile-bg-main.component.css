@@ -3,21 +3,3 @@
     display: flex;
     overflow: hidden;
 }
-
-.profile-bg-main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--bg-url);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    filter: grayscale(100%) brightness(50%);
-    z-index: 0;
-}
-
-.profile-bg-main > * {
-    position: relative;
-    z-index: 1;
-}
