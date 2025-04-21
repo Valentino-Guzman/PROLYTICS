@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 body, html {
+  height: 100%;
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  min-height: 100vh;
   background-color: rgb(19 22 25);
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath fill="none" stroke="%23fff" stroke-width="0.1" d="M0 0l100 100M0 100l100-100" /%3E%3C/svg%3E');
   background-size: 100px 100px;
