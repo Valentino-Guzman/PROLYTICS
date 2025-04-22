@@ -16,23 +16,7 @@
     transform: translateX(-50%);
 }
 
-.encabezado-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 160px;
-    margin-top: -45px;
-}
-
-.separador {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.separador-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 50px;
+.logo-container {
+    position: absolute;
+    left: 2%;
 }

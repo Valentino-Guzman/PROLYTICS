@@ -1,9 +1,9 @@
 footer {
-    background-color: rgb(19 22 25);
+    background: linear-gradient(180deg, #131619 0%, #02080e 50%);
     color: #fff;
     padding: 40px 0;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
   
 .footer-container {
@@ -42,7 +42,6 @@ footer {
     border: none;
 }
   
-
 .footer-bottom {
     margin-top: 30px;
     font-size: 14px;
@@ -56,4 +55,3 @@ footer {
 .footer-bottom a:hover {
     text-decoration: underline;
 }
-  
