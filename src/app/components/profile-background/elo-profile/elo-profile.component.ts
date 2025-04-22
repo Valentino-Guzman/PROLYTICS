@@ -17,11 +17,11 @@ export class EloProfileComponent implements OnInit {
     'MASTER': 'master', 'GRANDMASTER': 'grandmaster', 'CHALLENGER': 'challenger'
   };
   eloIconImg: Record<string, string> = {
-    'UNRANKED': '', 'IRON': 'webp/profile/iron.png', 'BRONZE': 'webp/profile/bronze.png',
-    'SILVER': 'webp/profile/silver.png', 'GOLD': 'webp/profile/gold.png',
-    'PLATINUM': 'webp/profile/platinum.png', 'EMERALD': 'webp/profile/emerald.png',
-    'DIAMOND': 'webp/profile/diamond.png', 'MASTER': 'webp/profile/master.png',
-    'GRANDMASTER': 'webp/profile/grandmaster.png', 'CHALLENGER': 'webp/profile/challenger.png'
+    'UNRANKED': '', 'IRON': 'webp/profile/iron.webp', 'BRONZE': 'webp/profile/bronze.webp',
+    'SILVER': 'webp/profile/silver.webp', 'GOLD': 'webp/profile/gold.webp',
+    'PLATINUM': 'webp/profile/platinum.webp', 'EMERALD': 'webp/profile/emerald.webp',
+    'DIAMOND': 'webp/profile/diamond.webp', 'MASTER': 'webp/profile/master.webp',
+    'GRANDMASTER': 'webp/profile/grandmaster.webp', 'CHALLENGER': 'webp/profile/challenger.webp'
   };
 
   constructor(private eloPlayerService: EloPlayerService) {}

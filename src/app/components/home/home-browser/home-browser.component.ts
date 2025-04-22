@@ -46,11 +46,9 @@ export class HomeBrowserComponent {
 
     this.accountService.getAccount().subscribe((data: Account) => {
       this.sharedData.setAccountData(data);
-      console.log(data);
 
       this.puuidService.getPuuid().subscribe((summoner: Summoner) => {
           this.puuid = summoner.puuid;
-          console.log(this.puuid);
         },
       );
 
