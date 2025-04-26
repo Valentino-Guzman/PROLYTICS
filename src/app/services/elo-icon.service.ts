@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SharedDataService } from './shared-data.service';
 import { map, Observable, switchMap } from 'rxjs';
 
 import { EloPlayerService } from './elo-player.service';

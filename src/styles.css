@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+  --color-text: #f8f8f8;
+  --color-bg: #131619;
+  --border-glow: rgba(255, 255, 255, 0.10);
+  --text-shadow-glow: 0 0 4px #ffffff;
+}
+
 body, html {
   height: 100%;
   margin: 0;

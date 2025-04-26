@@ -69,7 +69,7 @@
     justify-content: center;
 }
 
-.champion-image img{
+.champion-image img {
     width: 60px;
     height: 60px;
     clip-path: circle(45% at center);

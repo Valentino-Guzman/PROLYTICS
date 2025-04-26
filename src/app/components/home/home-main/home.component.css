@@ -42,6 +42,10 @@
   padding: 35px;
 }
 
+.home-main {
+  
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: rotate(0deg);

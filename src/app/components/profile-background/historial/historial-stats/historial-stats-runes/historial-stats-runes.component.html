@@ -1,34 +1,34 @@
 <div class="tooltip-container" (mouseenter)="showTooltip = true" (mouseleave)="showTooltip = false">
   <div class="runes">
     <div class="rune-first">
-      <img [src]="runesService.getRuneIconUrl(p.styles[0].selections[0].perk)" alt="Runa clave" />
+      <img [src]="runesService.getRuneIconUrl(p.styles[0].selections[0].perk)" alt="Runa clave" loading="lazy"/>
     </div>
     <div class="rune-second">
-      <img [src]="runesService.getStyleIconUrl(p.styles[1].style)" alt="Estilo secundario" />
+      <img [src]="runesService.getStyleIconUrl(p.styles[1].style)" alt="Estilo secundario" loading="lazy"/>
     </div>
   </div>
   
   <div class="tooltip-text rune-tooltip">
     <div class="rune-group-column">
       <div class="rune-main">
-        <img [src]="runesService.getRuneIconUrl(p.styles[0].selections[0].perk)" alt="Runa principal" />
+        <img [src]="runesService.getRuneIconUrl(p.styles[0].selections[0].perk)" alt="Runa principal" loading="lazy"/>
       </div>
       <div class="rune-secondary-row">
         <ng-container *ngFor="let rune of p.styles[0].selections.slice(1)">
-          <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa primaria secundaria" />
+          <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa primaria secundaria" loading="lazy"/>
         </ng-container>
       </div>
     </div>
 
     <div class="rune-group">
       <ng-container *ngFor="let rune of p.styles[1].selections">
-        <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa secundaria" />
+        <img [src]="runesService.getRuneIconUrl(rune.perk)" alt="Runa secundaria" loading="lazy"/>
       </ng-container>
     </div>
 
     <div class="rune-group">
       <ng-container *ngFor="let stat of p.statPerks | keyvalue">
-        <img [src]="runesService.getStatPerkIcon(stat.key, stat.value)" alt="Stat bonus" />
+        <img [src]="runesService.getStatPerkIcon(stat.key, stat.value)" alt="Stat bonus" loading="lazy"/>
       </ng-container>
     </div>
   </div>
