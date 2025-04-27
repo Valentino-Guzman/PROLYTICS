@@ -1,0 +1,18 @@
+<div class="stats-container" *ngIf="champions.length > 0">
+    <app-home-winrate-stats
+    [champions]="champions"
+    [getImageName]="getImageName"
+    [getRoleIcon]="getRoleIcon"
+    [getPickRate]="getPickRate"
+    [championImageFixes]="championImageFixes"
+    [getTier]="getTier"
+    [roles]="roles">
+    </app-home-winrate-stats>
+    <app-home-ban-stats
+    [bans]="bans"
+    [getImageName]="getImageName"
+    [getRoleIcon]="getRoleIcon"
+    [championImageFixes]="championImageFixes"
+    [roles]="roles">
+    </app-home-ban-stats>
+</div>

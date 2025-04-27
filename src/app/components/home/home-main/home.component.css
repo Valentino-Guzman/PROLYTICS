@@ -42,8 +42,8 @@
   padding: 35px;
 }
 
-.home-main {
-  
+.home-stats-conteiner {
+  padding: 2rem;
 }
 
 @keyframes bounce {

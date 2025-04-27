@@ -13,7 +13,7 @@ export class BansStatsService {
     private http: HttpClient
   ) { }
 
-  getChampionsStats(): Observable<BanStats[]> {
+  getBansStats(): Observable<BanStats[]> {
     const url = `${environment.apiUrl}champions/bans`;
     return this.http.get<BanStats[]>(url);
   }

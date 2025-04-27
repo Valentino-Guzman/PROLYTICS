@@ -5,3 +5,9 @@ export interface ChampionStats {
     winrate: number;
     role: string;
 }
+
+export interface BanStats {
+    championName: string;
+    banCount: number;
+    banrate: number;
+}

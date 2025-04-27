@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ChampionStats } from '../../../interfaces/stats';
+import { ChampionStats } from '../../../../interfaces/stats';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({

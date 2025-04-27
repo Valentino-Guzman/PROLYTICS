@@ -1,0 +1,45 @@
+<div class="stats-container">
+  <div class="stats-box" *ngIf="champions.length > 0">
+    <div class="stats-header">
+      <div class="title">
+        <h1>Tier List 15.8</h1>
+        <span>Best champions</span>
+      </div>
+      <div class="stats-subtitle">
+        <span>Champions</span>
+        <span>Tier</span>
+        <span>Pickrate</span>
+        <span>Winrate</span>
+      </div>
+    </div>
+    <div class="stats-data">
+      <div class="stats" *ngFor="let stat of champions">
+        <div class="champion-img-container">
+          <img class="champion-img" 
+               [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + getImageName(stat.championName) + '.png'" 
+               alt="{{ stat.championName }}"
+               loading="lazy">
+          <div class="champion-role">
+            <img [src]="getRoleIcon(stat.role)" alt="{{ stat.role }}">
+          </div>
+        </div>
+
+        <div class="champion-name">{{ stat.championName }}</div>
+
+        <div class="champion-tier">
+          <p [ngClass]="'tier-' + getTier(stat.winrate, stat.games)">{{getTier(stat.winrate, stat.games)}}</p>
+        </div>
+
+        <div class="champion-content">
+          <div class="champion-pickrate">
+            {{ getPickRate(stat.games) }}%
+          </div>
+          
+          <div class="champion-winrate">
+            {{ stat.winrate }}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
