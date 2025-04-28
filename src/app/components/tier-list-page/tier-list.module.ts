@@ -8,7 +8,6 @@ const routes: Routes = [
   { 
     path: 'champions', component: TierListChampionsStatsComponent
   },
-
 ];
 
 @NgModule({

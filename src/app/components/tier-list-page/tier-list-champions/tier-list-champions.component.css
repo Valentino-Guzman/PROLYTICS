@@ -35,6 +35,7 @@
     border-radius: 8px;
     text-align: center;
     width: 40px; 
+    cursor: pointer;
 }
   
 .champion-card img {
@@ -55,6 +56,7 @@
     text-overflow: ellipsis;
 }
 
-
-
-  
+.champion-card img:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-out;
+}
