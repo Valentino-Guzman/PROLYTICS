@@ -1,0 +1,60 @@
+.tier-list-container {
+    background-color: var(--color-bg);
+    padding: 10px;
+}
+  
+.tier-list-letter {
+    display: flex;
+    align-items: center;    
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+  
+.tier-list-letter h2 {
+    font-size: 14px;
+    color: #f8f8f8;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+    margin-right: 15px;
+    padding-bottom: 5px;
+}
+  
+.tier-list-champions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+  
+.champion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    width: 40px; 
+}
+  
+.champion-card img {
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+  
+.champion-card p {
+    font-size: 10px;
+    color: #fff;
+    margin: 0;
+    text-transform: capitalize;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+  

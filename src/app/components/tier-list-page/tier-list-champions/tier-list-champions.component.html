@@ -1,0 +1,18 @@
+<div class="tier-list-container">
+    <div>
+        Browser
+    </div>
+    <div *ngFor="let letter of letters">
+      <div class="tier-list-letter">
+        <h2>{{ letter }}</h2>
+        <div class="tier-list-champions">
+          <div *ngFor="let champion of getChampionsByLetter(letter)">
+            <div class="champion-card">
+              <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + champion.championName + '.png'" alt="">
+              <p class="truncate">{{ champion.championName }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
