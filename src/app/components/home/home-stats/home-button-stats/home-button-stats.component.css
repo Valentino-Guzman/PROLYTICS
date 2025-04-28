@@ -1,0 +1,30 @@
+.home-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-stats, button{
+    width: 100%;
+}
+
+button {
+    background: transparent;
+    padding: 5px;
+    border-radius: 0 0 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.home-button {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 15px;
+    opacity: 0.7;
+    transition: 0.3s ease-in-out;
+}
+
+.home-button:hover {
+    background-color: rgb(27 32 38);
+}
