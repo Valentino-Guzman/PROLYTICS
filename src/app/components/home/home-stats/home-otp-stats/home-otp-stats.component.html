@@ -1,42 +1,43 @@
 <div class="stats-container">
-    <div class="stats-box" *ngIf="bans.length > 0">
+    <div class="stats-box" *ngIf="otp.length > 0">
       <div class="stats-header">
         <div class="title">
-          <h1>Ban List 15.8</h1>
+          <h1>OTP List 15.8</h1>
+          <span>Best of LAS</span>
         </div>
         <div class="stats-subtitle">
-          <span>Champions</span>
-          <span>Ban Count</span>
-          <span>Banrate</span>
+          <span>Summoner</span>
+          <span>Games</span>
+          <span>Winrate</span>
         </div>
       </div>
       <div class="stats-data">
-        <div class="stats" *ngFor="let stat of bans">
+        <div class="stats" *ngFor="let stat of otp">
           <div class="champion-img-container">
             <img class="champion-img" 
-                 [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + getImageName(stat.championName) + '.png'" 
-                 alt="{{ stat.championName }}"
-                 loading="lazy">
+                [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + getImageName(stat.championName) + '.png'" 
+                alt="{{ stat.championName }}"
+                loading="lazy">
           </div>
   
           <div class="champion-name">
-            <p>{{ stat.championName }}</p>
+            <p>{{ stat.summonerName }}</p>
           </div>
   
           <div class="champion-content">
             <div class="champion-bancount">
-              {{ stat.banCount }}
+              {{ stat.KDA }}
             </div>
             
             <div class="champion-banrate">
-                {{stat.banrate | number: '1.0-2':'en-US'}}%
+                {{stat.winRate}}
             </div>
           </div>
         </div>
       </div>
 
       <app-home-button-stats
-        [buttonLink]="'/ban-list'"
+        [buttonLink]="'/otp-list'"
       ></app-home-button-stats>
 
     </div>

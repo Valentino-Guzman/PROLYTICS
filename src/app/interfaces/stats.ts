@@ -11,3 +11,15 @@ export interface BanStats {
     banCount: number;
     banrate: number;
 }
+
+export interface OtpStats {
+    championName: string;
+    totalGames: number;
+    totalWins: number;
+    winRate: number;
+    totalKills: number;
+    totalDeaths: number;
+    totalAssists: number;
+    KDA: number;
+    summonerName: string;
+}

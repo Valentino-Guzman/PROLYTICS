@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { HomeWinrateStatsComponent } from "../home-winrate-stats/home-winrate-stats.component";
 import { ChampionsStatsService } from '../../../../services/champions-stats.service';
 import { BansStatsService } from '../../../../services/bans-stats.service';
-import { BanStats, ChampionStats } from '../../../../interfaces/stats';
+import { BanStats, ChampionStats, OtpStats } from '../../../../interfaces/stats';
 import { NgIf } from '@angular/common';
 import { HomeBanStatsComponent } from '../home-ban-stats/home-ban-stats.component';
+import { HomeOtpStatsComponent } from "../home-otp-stats/home-otp-stats.component";
+import { OtpService } from '../../../../services/otp.service';
 
 @Component({
   selector: 'app-home-stats-main',
-  imports: [HomeWinrateStatsComponent, NgIf, HomeBanStatsComponent],
+  imports: [HomeWinrateStatsComponent, NgIf, HomeBanStatsComponent, HomeOtpStatsComponent],
   templateUrl: './home-stats-main.component.html',
   styleUrl: './home-stats-main.component.css'
 })
@@ -16,6 +18,7 @@ export class HomeStatsMainComponent {
 
   champions: ChampionStats[] = [];
   bans: BanStats[] = [];
+  otp: OtpStats[] = [];
 
   championImageFixes: Record<string, string> = {  
     "Kai'Sa": 'Kaisa',
@@ -51,12 +54,14 @@ export class HomeStatsMainComponent {
   
   constructor(
     private championsStats: ChampionsStatsService,
-    private BansStatsService: BansStatsService
+    private BansStatsService: BansStatsService,
+    private otpStatsService: OtpService
   ) {}
 
   ngOnInit(){
     this.getChampionsStats();
     this.getBansStats();
+    this.getOtpStats();
   }
 
   getChampionsStats() {
@@ -71,6 +76,15 @@ export class HomeStatsMainComponent {
     });
   }
 
+  getOtpStats() {
+    this.otpStatsService.getOtpStats().subscribe((data) => {
+      this.otp = data.map((otp) => ({
+        ...otp,
+        summonerName: otp.summonerName.split('#')[0]
+      }));
+    });
+  }
+
   getImageName(championName: string): string {
     return this.championImageFixes[championName] || championName;
   }
@@ -80,7 +94,7 @@ export class HomeStatsMainComponent {
   }
 
   getTier(winrate: number, games: number): string {
-    if (winrate >= 55 && games >= 300) return 'S+';
+    if (winrate >= 50 && games >= 5) return 'S+';
     if (winrate >= 53 && games >= 200) return 'S';
     if (winrate >= 51 && games >= 100) return 'A';
     if (winrate >= 49 && games >= 50) return 'B';

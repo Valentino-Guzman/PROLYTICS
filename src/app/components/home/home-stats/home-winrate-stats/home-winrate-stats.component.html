@@ -24,7 +24,9 @@
           </div>
         </div>
 
-        <div class="champion-name">{{ stat.championName }}</div>
+        <div class="champion-name">
+          <p>{{ stat.championName }}</p>
+        </div>
 
         <div class="champion-tier">
           <p [ngClass]="'tier-' + getTier(stat.winrate, stat.games)">{{getTier(stat.winrate, stat.games)}}</p>

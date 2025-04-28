@@ -17,3 +17,82 @@ body, html {
   background-size: 100px 100px;
   color: #fff;
 }
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.stats-box {
+  border: 1px solid var(--border-glow);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  width: 350px;
+}
+
+.stats {
+  display: grid;
+  gap: 15px;
+  padding: 5px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 0.1s ease-in-out;
+  align-items: center;
+}
+
+.stats-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-subtitle, .title  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+}
+
+.stats-subtitle {
+  margin-left: 16px;
+  margin-right: 10px;
+}
+
+.title span {
+  margin-right: 65px;
+  font-weight: 400;
+}
+
+.stats:hover {
+  border-top: 1px solid var(--border-glow);
+  border-bottom: 1px solid var(--border-glow);
+  background: rgba(255, 255, 255, 1%);
+  cursor: pointer;
+}
+
+.champion-name {
+  width: 50px;
+  margin-left: 6px;
+}
+
+.champion-img-container {
+  position: relative;
+}
+
+.champion-img-container,
+.champion-img {
+  width: 55px;
+  height: 55px;
+}
+
+.champion-img {
+  clip-path: inset(6% 6% 4% 6%);
+  border-radius: 20px;
+}
+
+.champion-name p {
+  font-size: 14px;
+  font-weight: 500;
+}
