@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ChampionStats } from '../../../interfaces/stats';
 import { ChampionsStatsService } from '../../../services/champions-stats.service';
 import { NgFor } from '@angular/common';
-import { TierListChampionsComponent } from "../tier-list-champions/tier-list-champions.component";
+import { TierListChampionsComponent } from "../tier-list-champions-main/tier-list-champions/tier-list-champions.component";
 
 @Component({
   selector: 'app-tier-list-champions-stats',

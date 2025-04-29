@@ -1,6 +1,7 @@
 .tier-list-container {
     background-color: var(--color-bg);
     padding: 10px;
+    max-width: 400px;
 }
   
 .tier-list-letter {
@@ -9,7 +10,7 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
 }
-  
+
 .tier-list-letter h2 {
     font-size: 14px;
     color: #f8f8f8;

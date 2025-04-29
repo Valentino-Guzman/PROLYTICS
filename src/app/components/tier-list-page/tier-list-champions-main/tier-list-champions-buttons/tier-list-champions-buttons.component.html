@@ -1,0 +1,7 @@
+<div class="role-buttons-container">
+    <div class="role-buttons">
+        <button *ngFor="let r of roles" (click)="filterByRole(r)" [class.active]="selectedRole === r">
+            <img [src]="getRoleIcon(r)" alt="{{ r }}">
+        </button>
+    </div>
+</div>

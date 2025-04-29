@@ -1,0 +1,8 @@
+<div class="browser-container">
+    <input 
+      type="text"
+      [ngModel]="searchQuery"
+      (ngModelChange)="onSearchChange($event)"
+      placeholder="Buscar..." />
+    <img src="svg/header/lupa.svg" alt="Buscar" />
+  </div>

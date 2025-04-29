@@ -15,6 +15,5 @@ export class HomeBanStatsComponent {
   @Input() championImageFixes!: Record<string, string>;
   @Input() roles!: Record<string, string>;
   @Input() getImageName!: (championName: string) => string;
-  @Input() getRoleIcon!: (roles: string) => string;
 
 }

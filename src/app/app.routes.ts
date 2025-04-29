@@ -10,5 +10,4 @@ export const routes: Routes = [
     {
         path: 'tier-list', loadChildren: () => import('./components/tier-list-page/tier-list.module').then(m => m.TierListModule)
     }
-    
 ];
