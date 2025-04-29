@@ -1,19 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { ChampionStats } from '../../../interfaces/stats';
-import { ChampionsStatsService } from '../../../services/champions-stats.service';
-import { NgFor } from '@angular/common';
-import { TierListChampionsComponent } from "../tier-list-champions-main/tier-list-champions/tier-list-champions.component";
+import { Component } from '@angular/core';
+import { TierListChampionsComponent } from '../../tier-list-champions/tier-list-champions-main/tier-list-champions.component';
+import { TierListChampionsBestComponent } from "../tier-list-champions-best/tier-list-champions-best.component";
+import { LoadingComponent } from "../../../loading-wrapper/loading/loading.component";
 
 @Component({
   selector: 'app-tier-list-champions-stats',
-  imports: [NgFor, TierListChampionsComponent],
+  imports: [TierListChampionsComponent, TierListChampionsBestComponent, LoadingComponent],
   templateUrl: './tier-list-champions-stats.component.html',
   styleUrl: './tier-list-champions-stats.component.css'
 })
 export class TierListChampionsStatsComponent {
 
-  championsStats: ChampionStats[] = [];
-  
+  loading: boolean = true;
+  childrenLoading: boolean[] = [true, true];
+
   championImageFixes: Record<string, string> = {  
     "Kai'Sa": 'Kaisa',
     "Wukong": 'MonkeyKing',
@@ -38,22 +38,11 @@ export class TierListChampionsStatsComponent {
     "Twisted Fate": 'TwistedFate'
   };
 
-  constructor(
-    private championStatsService: ChampionsStatsService,
-  ) {}
+  onChildLoadingChange(isLoading: boolean, index: number) {
+    console.log(`Evento recibido desde el hijo: loadingChange = ${isLoading} en el índice ${index}`);
+    this.childrenLoading[index] = isLoading;
+    this.loading = this.childrenLoading.every(val => !val);
 
-  ngOnInit() {
-    this.getChampionStats();
   }
 
-  getChampionStats() {
-    this.championStatsService.getChampionsStats().subscribe((data) => {
-      this.championsStats = data;
-      console.log(this.championsStats);
-    });
-  }
-
-  getImageName(championName: string): string {
-    return this.championImageFixes[championName] || championName;
-  }
 }

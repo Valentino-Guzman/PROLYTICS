@@ -1,15 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { ChampionsNameService } from '../../../../services/champions-name.service';
 import { Champions } from '../../../../interfaces/champions';
 import { LoadingComponent } from "../../../loading-wrapper/loading/loading.component";
 import { FormsModule } from '@angular/forms';
-import { TierListChampionsButtonsComponent } from "../tier-list-champions-buttons/tier-list-champions-buttons.component";
-import { TierListChampionsBrowserComponent } from "../tier-list-champions-browser/tier-list-champions-browser.component";
+import { TierListChampionHeaderComponent } from '../tier-list-champion-header-main/tier-list-champion-header/tier-list-champion-header.component';
+import { delay } from 'rxjs';
+
 
 @Component({
   selector: 'app-tier-list-champions',
-  imports: [NgFor, NgIf, NgOptimizedImage, LoadingComponent, FormsModule, TierListChampionsButtonsComponent, TierListChampionsBrowserComponent],
+  imports: [NgFor, NgIf, NgOptimizedImage, FormsModule, TierListChampionHeaderComponent],
   templateUrl: './tier-list-champions.component.html',
   styleUrl: './tier-list-champions.component.css'
 })
@@ -19,7 +20,10 @@ export class TierListChampionsComponent implements OnInit {
   championsName: Champions[] = [];
   searchQuery: string = '';
   selectedRole: string = 'ALL';
-  loading: boolean = false;
+
+  loading: boolean = true;
+  
+  @Output() loadingChange = new EventEmitter<boolean>();
   letters: string[] = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   constructor(
@@ -33,6 +37,8 @@ export class TierListChampionsComponent implements OnInit {
   getAllChampions() {
     this.champions.getAllChampions().subscribe((data) => {
       this.championsName = data;
+      console.log("Emitiendo loadingChange con valor: false");
+      this.loadingChange.emit(false);
       this.loading = false;
     })
   }
@@ -51,8 +57,9 @@ export class TierListChampionsComponent implements OnInit {
 
   getFilteredChampions(): Champions[] {
     return this.championsName.filter(champion =>
-      champion.championName.toLowerCase().includes(this.searchQuery.toLowerCase()) &&
+      champion.championName.toLowerCase().startsWith(this.searchQuery.toLowerCase()) &&
       (this.selectedRole === 'ALL' || champion.role === this.selectedRole)
+
     );
   }
 
@@ -60,5 +67,9 @@ export class TierListChampionsComponent implements OnInit {
     return this.getFilteredChampions().filter(champion =>
       champion.championName.startsWith(letter)
     );
+  }
+
+  hasChampionsToShow(): boolean {
+    return this.letters.some(letter => this.getChampionsByLetterAndRole(letter).length > 0);
   }
 }

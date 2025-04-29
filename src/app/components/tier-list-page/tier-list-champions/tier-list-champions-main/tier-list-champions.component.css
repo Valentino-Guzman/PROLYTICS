@@ -1,9 +1,12 @@
 .tier-list-container {
     background-color: var(--color-bg);
     padding: 10px;
-    max-width: 400px;
+    min-width: 500px;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
 }
-  
+
 .tier-list-letter {
     display: flex;
     align-items: center;    
@@ -60,4 +63,8 @@
 .champion-card img:hover {
     transform: scale(1.1);
     transition: 0.2s ease-out;
+}
+
+.no-results-message {
+    text-align: center;
 }

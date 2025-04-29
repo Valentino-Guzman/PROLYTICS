@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Champions } from '../../../../interfaces/champions';
+import { Champions } from '../../../../../interfaces/champions';
 import { FormsModule } from '@angular/forms';
 
 @Component({

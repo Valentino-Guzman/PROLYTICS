@@ -1,41 +1,35 @@
 .browser-container {
+    width: 500px;
     display: flex;
     justify-content: center;
-    padding: 5px;
     position: relative;
 }
 
 .browser-container img {
-    width: 20px;
+    width: 18px;
     position: absolute;
-    left: 70%;
-    transform: translateX(-50%);
+    right: 10px;
     top: 50%;
-    transform: translate(-50%, -50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transform: translateY(-50%);
     z-index: 1;
 }
 
 .browser-container input {
+    width: 100%;
     background-color: var(--color-bg);
     display: flex;
-    padding: 5px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 1);
     color: #fff;
-    padding: 10px;
-    padding-right: 30px; /* Ajusta el espacio a la derecha para la lupa */
+    font-weight: 600;
+    padding: 15px;
+    padding-right: 30px; 
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 input {
     background-color: transparent;
     border: none;
-    cursor: pointer;
     border-radius: 10%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;

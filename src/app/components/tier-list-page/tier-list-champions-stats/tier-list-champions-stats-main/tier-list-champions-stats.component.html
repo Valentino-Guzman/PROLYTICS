@@ -1,0 +1,12 @@
+<app-loading [loading]="loading">
+    <div class="tier-list-container">
+        <app-tier-list-champions 
+            [championImageFixes]="championImageFixes"
+            (loadingChange)="onChildLoadingChange($event, 0)">
+        </app-tier-list-champions>
+
+        <app-tier-list-champions-best
+            [championImageFixes]="championImageFixes">
+        </app-tier-list-champions-best>
+    </div>
+</app-loading>

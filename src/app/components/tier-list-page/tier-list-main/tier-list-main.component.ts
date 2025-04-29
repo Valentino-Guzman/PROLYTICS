@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { TierListChampionsComponent } from "../tier-list-champions-main/tier-list-champions/tier-list-champions.component";
-import { TierListChampionsStatsComponent } from "../tier-list-champions-stats/tier-list-champions-stats.component";
+import { TierListChampionsStatsComponent } from '../tier-list-champions-stats/tier-list-champions-stats-main/tier-list-champions-stats.component';
 
 @Component({
   selector: 'app-tier-list-main',

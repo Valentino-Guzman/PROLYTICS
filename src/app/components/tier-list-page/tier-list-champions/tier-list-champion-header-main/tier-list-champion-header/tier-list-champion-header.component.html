@@ -1,0 +1,12 @@
+<div class="header">
+    <app-tier-list-champions-browser
+      [(searchQuery)]="searchQuery"
+      (searchQueryChange)="onSearchQueryChange($event)"
+      (championSelected)="championSelected.emit($event)"
+      [champions]="champions">
+    </app-tier-list-champions-browser>
+  
+    <app-tier-list-champions-buttons
+      (roleSelected)="roleSelected.emit($event)">
+    </app-tier-list-champions-buttons>
+</div>
