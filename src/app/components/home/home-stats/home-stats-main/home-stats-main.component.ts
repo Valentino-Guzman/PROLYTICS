@@ -92,18 +92,4 @@ export class HomeStatsMainComponent {
   getRoleIcon(role: string): string {
     return this.roles[role] || '';
   }
-
-  getTier(winrate: number, games: number): string {
-    if (winrate >= 50 && games >= 5) return 'S+';
-    if (winrate >= 53 && games >= 200) return 'S';
-    if (winrate >= 51 && games >= 100) return 'A';
-    if (winrate >= 49 && games >= 50) return 'B';
-    if (winrate >= 47) return 'C';
-    return 'D';
-  }
-
-  getPickRate(championGames: number): number {
-    const totalGames = this.champions.reduce((acc, champ) => acc + champ.games, 0);
-    return +(100 * championGames / totalGames).toFixed(2);
-  }
 }

@@ -1,4 +1,9 @@
 <div class="tier-list-box">
+
+    <app-tier-list-champions-best-sorting-controls
+    (sortChanged)="onSortChanged($event)">
+    </app-tier-list-champions-best-sorting-controls>
+    
     <div class="tier-list-champion" *ngFor="let champion of championsStats">
         <div class="champion-info">
             <div class="champion-image">
@@ -8,21 +13,21 @@
             <div class="champion-name">
                 <p>{{champion.championName}}</p>
             </div>
-    
-            <div class="champion-games">
-                <p>{{champion.games}}</p>
+
+            <div class="champion-tier">
+                <p [ngClass]="'tier-' + champion.tier">{{champion.tier}}</p>
             </div>
-    
-            <div class="champion-kda">
-                <p>{{champion.role}}</p>
-            </div>
-    
+            
             <div class="champion-winrate">
                 <p>{{champion.winrate}}%</p>
             </div>
-    
+
             <div class="champion-pickrate">
-                
+                <p>{{champion.pickrate}}%</p>
+            </div>
+
+            <div class="champion-banrate">
+                <p>{{champion.banrate}}%</p>
             </div>
         </div>
     </div>

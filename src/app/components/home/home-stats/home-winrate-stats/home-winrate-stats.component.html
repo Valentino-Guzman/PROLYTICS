@@ -20,7 +20,7 @@
                alt="{{ stat.championName }}"
                loading="lazy">
           <div class="champion-role">
-            <img [src]="getRoleIcon(stat.role)" alt="{{ stat.role }}">
+            <img [src]="getRoleIcon(stat.mainRole)" alt="{{ stat.mainRole }}">
           </div>
         </div>
 
@@ -29,12 +29,12 @@
         </div>
 
         <div class="champion-tier">
-          <p [ngClass]="'tier-' + getTier(stat.winrate, stat.games)">{{getTier(stat.winrate, stat.games)}}</p>
+          <p [ngClass]="'tier-' + stat.tier">{{ stat.tier }}</p>
         </div>
 
         <div class="champion-content">
           <div class="champion-pickrate">
-            {{ getPickRate(stat.games) }}%
+            {{ stat.pickrate }}%
           </div>
           
           <div class="champion-winrate">

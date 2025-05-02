@@ -7,8 +7,8 @@
 }
 
 .tier-list-box {
-    width: 100%;
-    max-width: 500px; 
+    min-width: 500px;
+    max-width: 500px;
     background-color: var(--color-bg);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
@@ -16,15 +16,14 @@
 }
   
 .tier-list-champion:hover {
-    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.4);
-    background: rgba(0, 255, 255, 0.05);
+    background: #89785265;
     cursor: pointer;
 }
 
 .champion-info {
-    display: grid;
-    grid-template-columns: 40px 1.5fr 1fr 1fr 1fr;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .champion-image img {
@@ -34,20 +33,67 @@
 }
 
 .champion-name p,
-.champion-games p,
-.champion-kda p,
+.champion-banrate p,
+.champion-pickrate p,
 .champion-winrate p {
     margin: 0;
     font-size: 15px;
     color: #eee;
 }
 
+.champion-name,
+.champion-banrate,
+.champion-pickrate,
+.champion-winrate, 
+.champion-tier {
+   width: 90px;
+}
+
 .champion-name p {
     font-weight: 500;
 }
 
-.champion-games p,
-.champion-kda p,
-.champion-winrate p {
+.champion-name p,
+.champion-banrate p,
+.champion-pickrate p,
+.champion-winrate p, 
+.champion-tier p {
     text-align: center;
+}
+
+.tier-S\+,
+.tier-S,
+.tier-A,
+.tier-B,
+.tier-C,
+.tier-D {
+    margin: 0;
+    font-weight: 500;
+
+}
+
+.tier-S\+ { 
+    color: gold; 
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8); 
+    
+}
+.tier-S { 
+    color: orange; 
+    text-shadow: 0 0 5px rgba(255, 165, 0, 0.8); 
+}
+.tier-A { 
+    color: dodgerblue; 
+    text-shadow: 0 0 5px rgba(30, 144, 255, 0.8); 
+}
+.tier-B { 
+    color: mediumseagreen; 
+    text-shadow: 0 0 5px rgba(60, 179, 113, 0.8); 
+}
+.tier-C { 
+    color: khaki; 
+    text-shadow: 0 0 5px rgba(240, 230, 140, 0.8); 
+}
+.tier-D { 
+    color: lightcoral; 
+    text-shadow: 0 0 5px rgba(240, 128, 128, 0.8); 
 }

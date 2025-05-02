@@ -16,7 +16,5 @@ export class HomeWinrateStatsComponent {
   @Input() roles!: Record<string, string>;
   @Input() getImageName!: (championName: string) => string;
   @Input() getRoleIcon!: (roles: string) => string;
-  @Input() getPickRate!: (games: number) => number;
-  @Input() getTier!: (winrate: number, games: number) => string;
 
 }

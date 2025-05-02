@@ -37,7 +37,6 @@ export class TierListChampionsComponent implements OnInit {
   getAllChampions() {
     this.champions.getAllChampions().subscribe((data) => {
       this.championsName = data;
-      console.log("Emitiendo loadingChange con valor: false");
       this.loadingChange.emit(false);
       this.loading = false;
     })
@@ -45,10 +44,6 @@ export class TierListChampionsComponent implements OnInit {
 
   getImageName(championName: string): string {
     return this.championImageFixes[championName] || championName;
-  }
-
-  onChampionSelected(champion: Champions) {
-    console.log('Seleccionado:', champion);
   }
 
   onRoleSelected(role: string) {
@@ -59,7 +54,6 @@ export class TierListChampionsComponent implements OnInit {
     return this.championsName.filter(champion =>
       champion.championName.toLowerCase().startsWith(this.searchQuery.toLowerCase()) &&
       (this.selectedRole === 'ALL' || champion.role === this.selectedRole)
-
     );
   }
 

@@ -1,10 +1,15 @@
 export interface ChampionStats {
+    championId: number;
     championName: string;
-    games: number;
-    wins: number;
-    winrate: number;
-    role: string;
-}
+    mainRole: string;
+    pick_count: number;     
+    win_count: number;          
+    winrate: number;          
+    pickrate: number;       
+    banrate: number;         
+    performanceScore: number; 
+    tier: 'S+' | 'S' | 'A' | 'B' | 'C';
+  }
 
 export interface BanStats {
     championName: string;

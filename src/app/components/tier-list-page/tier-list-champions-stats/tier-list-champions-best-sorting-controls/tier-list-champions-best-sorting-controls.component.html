@@ -1,0 +1,28 @@
+<div class="sorting-controls">
+    <button (click)="onSortChange('winrate')">
+      Winrate
+      <span *ngIf="sortKey === 'winrate'">
+        <div [ngClass]="sortDirection">
+          <img src="webp/stats/arrow-up.svg" alt="arrow" width="16" height="16" />
+        </div>
+      </span>
+    </button>
+  
+    <button (click)="onSortChange('pickrate')">
+      Pickrate
+      <span *ngIf="sortKey === 'pickrate'">
+        <div [ngClass]="sortDirection">
+          <img src="webp/stats/arrow-up.svg" alt="arrow" width="16" height="16" />
+        </div>
+      </span>
+    </button>
+  
+    <button (click)="onSortChange('banrate')">
+      Banrate
+      <span *ngIf="sortKey === 'banrate'">
+        <div [ngClass]="sortDirection">
+          <img src="webp/stats/arrow-up.svg" alt="arrow" width="16" height="16" />
+        </div>
+      </span>
+    </button>
+</div>
