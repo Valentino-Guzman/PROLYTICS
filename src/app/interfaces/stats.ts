@@ -8,7 +8,7 @@ export interface ChampionStats {
     pickrate: number;       
     banrate: number;         
     performanceScore: number; 
-    tier: 'S+' | 'S' | 'A' | 'B' | 'C';
+    tierRank: 'S+' | 'S' | 'A' | 'B' | 'C';
   }
 
 export interface BanStats {

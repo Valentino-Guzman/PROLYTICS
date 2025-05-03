@@ -1,16 +1,28 @@
 .filter-main {
-    padding: 5px;
-    background-color: darkblue;
+    padding-top: 15px;
 }
 
 .filter-container {
-    width: 40%;    
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
+    padding-left: 25px;
 }
 
-.elo select, .region select {
+.selected-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.selected-option img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.region select, .selected-option {
     background-color: var(--color-bg);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -30,7 +42,61 @@
     background-size: 16px;
 }
 
-.elo select:hover, .region select:hover {
+.region select:hover {
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7);
+}
+
+.custom-select {
+    position: relative;
+    width: 200px;
+    background-color: var(--color-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.options-box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(-20px); /* Comienza ligeramente hacia arriba */
+    pointer-events: none; /* Desactiva la interacción hasta que se muestre */
+    transition: opacity 0.3s ease, transform 0.3s ease-in-out; /* Transición suave */
+}
+
+.options-box.open {
+    opacity: 1;
+    transform: translateY(0); /* Desliza las opciones hacia su posición original */
+    pointer-events: auto; /* Habilita la interacción cuando esté visible */
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.options img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.options:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
 }

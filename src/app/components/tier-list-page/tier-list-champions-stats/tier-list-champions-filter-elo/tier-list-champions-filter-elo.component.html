@@ -1,19 +1,32 @@
 <div class="filter-main">
     <div class="filter-container">
         <div class="elo">
-            <select name="" id="">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>
+            <div class="custom-select" (click)="toggleOptions()">
+                <div class="selected-option">
+                    <img [src]="selectedTier.icon" alt="Icon" />
+                    <span>{{ selectedTier.label || 'Select Tier' }}</span>
+                </div>
+                <div class="options-box" [ngClass]="{'open': optionsVisible}">
+                    <div class="options" *ngFor="let tier of tiers" (click)="selectTier(tier)">
+                        <img [src]="tier.icon" alt="Tier icon" />
+                        <span>{{ tier.label }}</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    
-        <div class="region">
-            <select name="" id="">
-                <option value="">las</option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>
-        </div>
+        <!-- <div class="region">
+            <div class="custom-select" (click)="toggleOptions()">
+                <div class="selected-option">
+                    <img [src]="selectedRegion.icon" alt="Icon" />
+                    <span>{{ selectedRegion.label }}</span>
+                </div>
+                <div class="options-box" [ngClass]="{'open': optionsVisible}">
+                    <div *ngFor="let region of regions" (click)="selectRegion(region)">
+                        <img [src]="region.icon" alt="Region icon" />
+                        <span>{{ region.label }}</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </div>
