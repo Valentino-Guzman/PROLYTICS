@@ -1,4 +1,18 @@
 <div class="sorting-controls">
+
+    <button>
+      Champions
+    </button>
+
+    <button (click)="onSortChange('tier')">
+      Tier
+      <span *ngIf="sortKey === 'tier'">
+        <div [ngClass]="sortDirection">
+          <img src="webp/stats/arrow-up.svg" alt="arrow" width="16" height="16" />
+        </div>
+      </span>
+    </button>
+
     <button (click)="onSortChange('winrate')">
       Winrate
       <span *ngIf="sortKey === 'winrate'">

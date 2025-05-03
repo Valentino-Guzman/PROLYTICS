@@ -27,7 +27,7 @@ export class TierListChampionsBestComponent {
   }
 
   getChampionStats() {
-    this.championStatsService.getChampionsStats(50).subscribe((data) => {
+    this.championStatsService.getChampionsStats(45).subscribe((data) => {
       this.championsStats = data;
       console.log(this.championsStats);
     });
