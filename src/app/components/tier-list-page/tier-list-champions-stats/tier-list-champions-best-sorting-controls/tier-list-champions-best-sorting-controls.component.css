@@ -1,6 +1,7 @@
 .sorting-controls {
     display: flex;
     justify-content: flex-end;
+    margin-top: 10px;
 }
   
 button {
@@ -15,6 +16,15 @@ button {
     color: #c8ab6e;
     font-weight: 600;
     justify-content: center;
+}
+
+p {
+    display: flex;
+    align-items: center;
+    color: #c8ab6e;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0;
 }
 
 button:hover {

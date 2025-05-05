@@ -1,9 +1,9 @@
-import { NgFor } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tier-list-champions-buttons',
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './tier-list-champions-buttons.component.html',
   styleUrl: './tier-list-champions-buttons.component.css'
 })
@@ -11,6 +11,7 @@ export class TierListChampionsButtonsComponent {
 
   roles = ['ALL', 'TOP', 'JUNGLE', 'MIDDLE', 'BOTTOM', 'UTILITY'];
   selectedRole: string = 'ALL';
+  @Input() showRoleName: boolean = false;
 
   rolesImg: Record<string, string> = {
       "TOP": "svg/role/top.svg",

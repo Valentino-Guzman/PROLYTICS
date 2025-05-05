@@ -5,20 +5,25 @@ import { ChampionsStatsService } from '../../../../services/champions-stats.serv
 import { TierListChampionsBestSortingControlsComponent } from "../tier-list-champions-best-sorting-controls/tier-list-champions-best-sorting-controls.component";
 import { SharedDataService } from '../../../../services/shared-data.service';
 import { LoadingComponent } from "../../../loading-wrapper/loading/loading.component";
+import { TierListChampionsButtonsComponent } from "../../tier-list-champions/tier-list-champion-header-main/tier-list-champions-buttons/tier-list-champions-buttons.component";
 
 @Component({
   selector: 'app-tier-list-champions-best',
-  imports: [NgFor, NgClass, TierListChampionsBestSortingControlsComponent, LoadingComponent],
+  imports: [NgFor, NgClass, TierListChampionsBestSortingControlsComponent, LoadingComponent, TierListChampionsButtonsComponent],
   templateUrl: './tier-list-champions-best.component.html',
   styleUrl: './tier-list-champions-best.component.css'
 })
 export class TierListChampionsBestComponent {
 
   championsStats: ChampionStats[] = [];
+  allChampionsStats: ChampionStats[] = [];
+
   @Input() championImageFixes!: Record<string, string>
   tier: string = '';
 
   loading: boolean = true;
+
+  selectedRole: string = 'ALL';
 
   sortKey: keyof ChampionStats = 'winrate';
   sortDirection: 'asc' | 'desc' = 'desc';
@@ -39,11 +44,19 @@ export class TierListChampionsBestComponent {
     this.loading = true;
     this.championStatsService.getChampionsStats(45, this.tier).subscribe({
       next: (data) => {
-        this.championsStats = data;
-        this.loading = false; 
+        this.allChampionsStats = data;
+        this.filterByRole();
+        this.loading = false;
       },
     });
   }
+  
+  filterByRole() {
+    this.championsStats = this.selectedRole === 'ALL'
+      ? this.allChampionsStats
+      : this.allChampionsStats.filter(champ => champ.mainRole === this.selectedRole);
+  }
+
   getImageName(championName: string): string {
     return this.championImageFixes[championName] || championName;
   }
@@ -69,6 +82,11 @@ export class TierListChampionsBestComponent {
     this.sharedData.tierSource$.subscribe((data) => {
       this.tier = data;
     })
+  }
+
+  onRoleSelected(role: string) {
+    this.selectedRole = role;
+    this.filterByRole();
   }
 
 }

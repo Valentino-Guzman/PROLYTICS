@@ -1,7 +1,12 @@
 <div class="tier-list-box">
 
+    <app-tier-list-champions-buttons
+    [showRoleName]="true"
+    (roleSelected)="onRoleSelected($event)">
+    </app-tier-list-champions-buttons>
+
     <app-tier-list-champions-best-sorting-controls
-    (sortChanged)="onSortChanged($event)">
+        (sortChanged)="onSortChanged($event)">
     </app-tier-list-champions-best-sorting-controls>
     
     <app-loading [loading]="loading">
