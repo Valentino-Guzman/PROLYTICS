@@ -1,5 +1,6 @@
-import { NgClass, NgFor, NgIf} from '@angular/common';
+import { NgClass, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { SharedDataService } from '../../../../services/shared-data.service';
 
 @Component({
   selector: 'app-tier-list-champions-filter-elo',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './tier-list-champions-filter-elo.component.css'
 })
 export class TierListChampionsFilterEloComponent {
+
+  constructor(private sharedData: SharedDataService) {}
 
   tiers = [
     { value: 'CHALLENGER', label: 'Challenger', icon: 'svg/elo/challenger.svg' },
@@ -28,22 +31,31 @@ export class TierListChampionsFilterEloComponent {
     { value: 'NA', label: 'NA', icon: 'svg/regions/NA.svg'},
   ];
 
-
   selectedTier = this.tiers[0];
   selectedRegion = this.regions[0];
 
   selectTier(tier: any) {
     this.selectedTier = tier;
+    this.sharedData.setTier(tier.value);
+    this.optionsVisibleTier = false; 
   }
 
   selectRegion(region: any) {
     this.selectedRegion = region;
+    this.optionsVisibleRegion = false;
   }
 
-  optionsVisible: boolean = false;
+  optionsVisibleTier = false;
+  optionsVisibleRegion = false;
 
-    toggleOptions(): void {
-        this.optionsVisible = !this.optionsVisible;
-    }
+  toggleTierOptions() {
+    this.optionsVisibleTier = !this.optionsVisibleTier;
+    if (this.optionsVisibleTier) this.optionsVisibleRegion = false;
+  }
+
+  toggleRegionOptions() {
+    this.optionsVisibleRegion = !this.optionsVisibleRegion;
+    if (this.optionsVisibleRegion) this.optionsVisibleTier = false;
+  }
 
 }

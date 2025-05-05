@@ -40,10 +40,8 @@ export class TierListChampionsStatsComponent {
   };
 
   onChildLoadingChange(isLoading: boolean, index: number) {
-    console.log(`Evento recibido desde el hijo: loadingChange = ${isLoading} en el índice ${index}`);
     this.childrenLoading[index] = isLoading;
     this.loading = this.childrenLoading.every(val => !val);
-
   }
 
 }

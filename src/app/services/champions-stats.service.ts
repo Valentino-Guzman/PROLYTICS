@@ -13,8 +13,8 @@ export class ChampionsStatsService {
     private http: HttpClient
   ) { }
 
-  getChampionsStats(limit: number = 5): Observable<ChampionStats[]> {
-    const url = `${environment.apiUrl}champions/winrate?limit=${limit}`;
+  getChampionsStats(limit: number = 5, tier: string = ''): Observable<ChampionStats[]> {
+    const url = `${environment.apiUrl}champions/winrate?limit=${limit}&tier=${tier}`;
     return this.http.get<ChampionStats[]>(url);
   }
 

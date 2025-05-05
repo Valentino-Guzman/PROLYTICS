@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { ChampionStats } from '../../../../interfaces/stats';
 import { ChampionsStatsService } from '../../../../services/champions-stats.service';
 import { TierListChampionsBestSortingControlsComponent } from "../tier-list-champions-best-sorting-controls/tier-list-champions-best-sorting-controls.component";
+import { SharedDataService } from '../../../../services/shared-data.service';
 
 @Component({
   selector: 'app-tier-list-champions-best',
@@ -14,22 +15,26 @@ export class TierListChampionsBestComponent {
 
   championsStats: ChampionStats[] = [];
   @Input() championImageFixes!: Record<string, string>
+  tier: string = '';
 
   sortKey: keyof ChampionStats = 'winrate';
   sortDirection: 'asc' | 'desc' = 'desc';
 
   constructor(
     private championStatsService: ChampionsStatsService,
+    private sharedData: SharedDataService
   ) {}
 
   ngOnInit() {
-   this.getChampionStats();
+    this.sharedData.tierSource$.subscribe((tier) => {
+      this.tier = tier;
+      this.getChampionStats();
+    });
   }
 
   getChampionStats() {
-    this.championStatsService.getChampionsStats(45).subscribe((data) => {
+    this.championStatsService.getChampionsStats(45, this.tier).subscribe((data) => {
       this.championsStats = data;
-      console.log(this.championsStats);
     });
   }
 
@@ -52,6 +57,12 @@ export class TierListChampionsBestComponent {
       if (valueA > valueB) return this.sortDirection === 'asc' ? 1 : -1;
       return 0;
     });
+  }
+
+  getTier() {
+    this.sharedData.tierSource$.subscribe((data) => {
+      this.tier = data;
+    })
   }
 
 }

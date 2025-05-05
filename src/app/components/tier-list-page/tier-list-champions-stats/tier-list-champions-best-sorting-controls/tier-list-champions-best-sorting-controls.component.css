@@ -36,3 +36,9 @@ button:hover {
     height: 16px;
     margin-left: 5px;
 }
+
+.asc img,
+.desc img {
+    position: absolute;
+    z-index: 0;
+}

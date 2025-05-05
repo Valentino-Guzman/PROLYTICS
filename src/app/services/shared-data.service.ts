@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Account } from '../interfaces/account';
-import { EloPlayer } from '../interfaces/elo-player';
 import { Participant } from '../interfaces/player-stats';
 
 @Injectable({
@@ -18,6 +16,11 @@ export class SharedDataService {
 
     private championName = new BehaviorSubject<Participant[]>([]);
     championName$ = this.championName.asObservable();
+
+    private tierSource = new BehaviorSubject<string>('CHALLENGER');
+    tierSource$ = this.tierSource.asObservable();
+
+    
     
     constructor() {}
   
@@ -35,5 +38,9 @@ export class SharedDataService {
 
     setPuuid(puuid: string) {
 
+    }
+
+    setTier(tier: string) {
+      this.tierSource.next(tier);
     }
 }
