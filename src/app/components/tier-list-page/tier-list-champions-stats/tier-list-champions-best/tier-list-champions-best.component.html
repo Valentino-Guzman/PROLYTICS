@@ -4,31 +4,33 @@
     (sortChanged)="onSortChanged($event)">
     </app-tier-list-champions-best-sorting-controls>
     
-    <div class="tier-list-champion" *ngFor="let champion of championsStats">
-        <div class="champion-info">
-            <div class="champion-image">
-                <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + getImageName(champion.championName) + '.png'" alt="">
-            </div>
+    <app-loading [loading]="loading">
+        <div class="tier-list-champion" *ngFor="let champion of championsStats">
+            <div class="champion-info">
+                <div class="champion-image">
+                    <img [src]="'https://ddragon.leagueoflegends.com/cdn/15.6.1/img/champion/' + getImageName(champion.championName) + '.png'" alt="">
+                </div>
+        
+                <div class="champion-name">
+                    <p>{{champion.championName}}</p>
+                </div>
     
-            <div class="champion-name">
-                <p>{{champion.championName}}</p>
-            </div>
-
-            <div class="champion-tier">
-                <p [ngClass]="'tier-' + champion.tierRank">{{champion.tierRank}}</p>
-            </div>
-            
-            <div class="champion-winrate">
-                <p>{{champion.winrate}}%</p>
-            </div>
-
-            <div class="champion-pickrate">
-                <p>{{champion.pickrate}}%</p>
-            </div>
-
-            <div class="champion-banrate">
-                <p>{{champion.banrate}}%</p>
+                <div class="champion-tier">
+                    <p [ngClass]="'tier-' + champion.tierRank">{{champion.tierRank}}</p>
+                </div>
+                
+                <div class="champion-winrate">
+                    <p>{{champion.winrate}}%</p>
+                </div>
+    
+                <div class="champion-pickrate">
+                    <p>{{champion.pickrate}}%</p>
+                </div>
+    
+                <div class="champion-banrate">
+                    <p>{{champion.banrate}}%</p>
+                </div>
             </div>
         </div>
-    </div>
+    </app-loading>
 </div>

@@ -4,10 +4,11 @@ import { ChampionStats } from '../../../../interfaces/stats';
 import { ChampionsStatsService } from '../../../../services/champions-stats.service';
 import { TierListChampionsBestSortingControlsComponent } from "../tier-list-champions-best-sorting-controls/tier-list-champions-best-sorting-controls.component";
 import { SharedDataService } from '../../../../services/shared-data.service';
+import { LoadingComponent } from "../../../loading-wrapper/loading/loading.component";
 
 @Component({
   selector: 'app-tier-list-champions-best',
-  imports: [NgFor, NgClass, TierListChampionsBestSortingControlsComponent],
+  imports: [NgFor, NgClass, TierListChampionsBestSortingControlsComponent, LoadingComponent],
   templateUrl: './tier-list-champions-best.component.html',
   styleUrl: './tier-list-champions-best.component.css'
 })
@@ -16,6 +17,8 @@ export class TierListChampionsBestComponent {
   championsStats: ChampionStats[] = [];
   @Input() championImageFixes!: Record<string, string>
   tier: string = '';
+
+  loading: boolean = true;
 
   sortKey: keyof ChampionStats = 'winrate';
   sortDirection: 'asc' | 'desc' = 'desc';
@@ -33,11 +36,14 @@ export class TierListChampionsBestComponent {
   }
 
   getChampionStats() {
-    this.championStatsService.getChampionsStats(45, this.tier).subscribe((data) => {
-      this.championsStats = data;
+    this.loading = true;
+    this.championStatsService.getChampionsStats(45, this.tier).subscribe({
+      next: (data) => {
+        this.championsStats = data;
+        this.loading = false; 
+      },
     });
   }
-
   getImageName(championName: string): string {
     return this.championImageFixes[championName] || championName;
   }
